@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import {SeriesPageModule} from "../Series/Series.module";
 
 const routes: Routes = [
   {
@@ -8,27 +9,31 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        path: 'Films',
+        loadChildren: () => import('../Films/Films.module').then(m => m.FilmsPageModule)
       },
       {
-        path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        path: 'explorer',
+        loadChildren: () => import('../explorer/explorer.module').then(m => m.ExplorerPageModule)
       },
       {
-        path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        path: 'Home',
+        loadChildren: () => import('../Home/Home.module').then(m => m.HomePageModule)
+      },
+      {
+        path: 'Series',
+        loadChildren: () => import('../Series/Series.module').then(m => m.SeriesPageModule)
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/explorer',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/Films',
     pathMatch: 'full'
   }
 ];

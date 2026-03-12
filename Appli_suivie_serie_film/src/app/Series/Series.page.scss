@@ -1,0 +1,34 @@
+/* Le conteneur qui permet le défilement */
+.scroll-horizontal {
+  display: flex;
+  overflow-x: auto; /* Active le scroll horizontal */
+  gap: 12px; /* Espace entre les affiches */
+  padding-bottom: 10px; /* Espace en bas */
+
+  /* L'effet "slider" qui aimante les cartes */
+  scroll-snap-type: x mandatory;
+}
+
+/* Cache la barre de défilement sur Chrome/Safari/Edge */
+.scroll-horizontal::-webkit-scrollbar {
+  display: none;
+}
+
+/* Vos affiches */
+.carte-serie {
+  flex: 0 0 auto; /* Empêche la carte de se rétrécir */
+  width: 130px; /* Largeur de l'affiche */
+
+  /* Point d'aimantation du slider (au début de la carte) */
+  scroll-snap-align: start;
+
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.carte-serie img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
