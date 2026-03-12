@@ -1,0 +1,7 @@
+{
+  "name": "Appli_suivie_serie_film",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
