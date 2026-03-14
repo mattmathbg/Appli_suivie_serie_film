@@ -16,9 +16,6 @@ import {HeaderComponent} from "../components/header/header.component";
     FormsModule,
     ExploreContainerComponentModule,
     HomePageRoutingModule,
-    SliderSeriesFilmsComponent,
-    StatsComponent,
-    HeaderComponent
   ],
   exports: [
     HeaderComponent,
