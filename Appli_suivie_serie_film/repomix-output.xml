@@ -113,6 +113,10 @@ src/app/components/header/header.component.html
 src/app/components/header/header.component.scss
 src/app/components/header/header.component.spec.ts
 src/app/components/header/header.component.ts
+src/app/components/search/search.component.html
+src/app/components/search/search.component.scss
+src/app/components/search/search.component.spec.ts
+src/app/components/search/search.component.ts
 src/app/components/slider-series-films/slider-series-films.component.html
 src/app/components/slider-series-films/slider-series-films.component.scss
 src/app/components/slider-series-films/slider-series-films.component.spec.ts
@@ -126,9 +130,9 @@ src/app/explore-container/explore-container.component.scss
 src/app/explore-container/explore-container.component.spec.ts
 src/app/explore-container/explore-container.component.ts
 src/app/explore-container/explore-container.module.ts
-src/app/explorer/eplorer.page.html
 src/app/explorer/explorer-routing.module.ts
 src/app/explorer/explorer.module.ts
+src/app/explorer/explorer.page.html
 src/app/explorer/explorer.page.scss
 src/app/explorer/explorer.page.spec.ts
 src/app/explorer/explorer.page.ts
@@ -1730,7 +1734,6 @@ module.exports = function (config) {
 <file path="src/app/app-routing.module.ts">
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { ParametrePage } from './parametre/parametre.page'
 
 const routes: Routes = [
   {
@@ -1738,7 +1741,8 @@ const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
-    path: 'parametre', component: ParametrePage,
+    path: 'parametre',
+    loadChildren: () => import('./parametre/parametre.module').then(m => m.ParametrePageModule),
   }
 
 ];
@@ -1821,10 +1825,16 @@ export class AppModule {}
 <file path="src/app/components/header/header.component.html">
 <ion-header [translucent]="true">
   <ion-toolbar>
+
+    <ion-button fill="clear" slot="start">
+      <ion-back-button defaultHref="/tabs/Home"></ion-back-button>
+    </ion-button>
+
+
     <ion-title>
       EpisodeTrack
     </ion-title>
-    <ion-button routerLink="/parametre" tab="parametre" slot="end">
+    <ion-button fill="clear" routerLink="/parametre" tab="parametre" slot="end">
       <ion-icon name="settings-outline"></ion-icon>
     </ion-button>
   </ion-toolbar>
@@ -1881,6 +1891,58 @@ export class HeaderComponent {
 
 
 
+}
+</file>
+
+<file path="src/app/components/search/search.component.html">
+<h2>salut </h2>
+<ion-searchbar></ion-searchbar>
+</file>
+
+<file path="src/app/components/search/search.component.scss">
+
+</file>
+
+<file path="src/app/components/search/search.component.spec.ts">
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
+
+import { SearchComponent } from './search.component';
+
+describe('SearchComponent', () => {
+  let component: SearchComponent;
+  let fixture: ComponentFixture<SearchComponent>;
+
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [ SearchComponent ],
+      imports: [IonicModule.forRoot()]
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(SearchComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  }));
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+</file>
+
+<file path="src/app/components/search/search.component.ts">
+import { Component, OnInit } from '@angular/core';
+import {IonicModule} from "@ionic/angular";
+
+@Component({
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.scss'],
+  standalone: false,
+})
+export class SearchComponent {
+
+  constructor() { }
 }
 </file>
 
@@ -2172,25 +2234,6 @@ import { ExploreContainerComponent } from './explore-container.component';
 export class ExploreContainerComponentModule {}
 </file>
 
-<file path="src/app/explorer/eplorer.page.html">
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      explorer
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">explorer</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-</ion-content>
-</file>
-
 <file path="src/app/explorer/explorer-routing.module.ts">
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -2228,9 +2271,28 @@ import {ExplorerPageRoutingModule} from "./explorer-routing.module";
     ExploreContainerComponentModule,
     ExplorerPageRoutingModule
   ],
-  declarations: [ExplorerPage]
+  declarations: []
 })
 export class ExplorerPageModule {}
+</file>
+
+<file path="src/app/explorer/explorer.page.html">
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      explorer
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">explorer</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <app-search></app-search>
+</ion-content>
 </file>
 
 <file path="src/app/explorer/explorer.page.scss">
@@ -2271,7 +2333,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-explorer-page',
-  templateUrl: 'explorer.page.scss',
+  templateUrl: 'explorer.page.html',
   styleUrls: ['explorer.page.scss'],
   standalone: false,
 })
@@ -2302,17 +2364,14 @@ export class FilmsPageRoutingModule {}
 </file>
 
 <file path="src/app/Films/Films.module.ts">
+import { HomePageModule } from '../Home/Home.module';
 import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { FilmsPage } from './Films.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
-
 import { FilmsPageRoutingModule } from './Films-routing.module';
-import {StatsComponent} from "../components/stats/stats.component";
-import {SliderSeriesFilmsComponent} from "../components/slider-series-films/slider-series-films.component";
-import {HeaderComponent} from "../components/header/header.component";
 
 @NgModule({
   imports: [
@@ -2321,9 +2380,7 @@ import {HeaderComponent} from "../components/header/header.component";
     FormsModule,
     ExploreContainerComponentModule,
     FilmsPageRoutingModule,
-    StatsComponent,
-    SliderSeriesFilmsComponent,
-    HeaderComponent
+    HomePageModule
   ],
   declarations: [FilmsPage]
 })
@@ -2340,9 +2397,10 @@ export class FilmsPageModule {}
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
-  <app-stats></app-stats>
-  <app-slider-series-films titre="Films en cours"></app-slider-series-films>
-  <app-slider-series-films titre="Vos Films"></app-slider-series-films>
+    <app-stats></app-stats>
+    <app-slider-series-films titre="Films en cours"></app-slider-series-films>
+    <app-slider-series-films titre="Vos Films"></app-slider-series-films>
+  </ion-content>
 </ion-content>
 </file>
 
@@ -2433,9 +2491,6 @@ import {HeaderComponent} from "../components/header/header.component";
     FormsModule,
     ExploreContainerComponentModule,
     HomePageRoutingModule,
-    SliderSeriesFilmsComponent,
-    StatsComponent,
-    HeaderComponent
   ],
   exports: [
     HeaderComponent,
@@ -2629,7 +2684,22 @@ export class ParametrePageModule {}
       <ion-icon slot="start" name="moon-outline"></ion-icon>
       <ion-toggle>Mode sombre : </ion-toggle>
     </ion-item>
+    <ion-item>
+      <ion-icon slot="start" name="notifications-outline"></ion-icon>
+      <ion-toggle>Notifications : </ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-icon slot="start" name="flag-outline"></ion-icon>
+      <ion-label>Languages : </ion-label>
+      <ion-select>
+        <ion-select-option>Francais</ion-select-option>
+        <ion-select-option>Allemand</ion-select-option>
+        <ion-select-option>Anglais</ion-select-option>
+        <ion-select-option>Espagnole</ion-select-option>
+      </ion-select>
+    </ion-item>
   </ion-list>
+  <ion-button>Réinitialiser</ion-button>
 </ion-content>
 </file>
 
@@ -2703,10 +2773,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 import { SeriesPageRoutingModule } from './Series-routing.module';
 import { SeriesPage } from "./Series.page";
 import { SerieVueComponentModule } from "./SerieVue/SerieVue.module";
-import {SliderSeriesFilmsComponent} from "../components/slider-series-films/slider-series-films.component";
-import {StatsComponent} from "../components/stats/stats.component";
-import {HeaderComponent} from "../components/header/header.component";
-import {HomePageModule} from "../Home/Home.module";
+import { HomePageModule } from "../Home/Home.module";
 
 @NgModule({
   imports: [
@@ -2716,9 +2783,6 @@ import {HomePageModule} from "../Home/Home.module";
     ExploreContainerComponentModule,
     SeriesPageRoutingModule,
     SerieVueComponentModule,
-    SliderSeriesFilmsComponent,
-    StatsComponent,
-    HeaderComponent,
     HomePageModule,
   ],
   declarations: [SeriesPage]
@@ -2735,12 +2799,11 @@ export class SeriesPageModule {}
       <ion-title size="large">Series</ion-title>
     </ion-toolbar>
   </ion-header>
-<ion-content class="ion-padding">
-  <app-stats></app-stats>
-  <app-slider-series-films></app-slider-series-films>
-  <app-slider-series-films titre="Vos series"></app-slider-series-films>
-
-</ion-content>
+  <ion-content class="ion-padding">
+    <app-stats></app-stats>
+    <app-slider-series-films titre="Series en cours"></app-slider-series-films>
+    <app-slider-series-films titre="Vos series"></app-slider-series-films>
+  </ion-content>
 </ion-content>
 </file>
 

@@ -4,7 +4,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ExplorerPage } from './explorer.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
-import {ExplorerPageRoutingModule} from "./explorer-routing.module";
+import { ExplorerPageRoutingModule } from "./explorer-routing.module";
+import { SearchComponent } from '../components/search/search.component';
+import {HomePageModule} from "../Home/Home.module";
 
 
 @NgModule({
@@ -13,8 +15,9 @@ import {ExplorerPageRoutingModule} from "./explorer-routing.module";
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    ExplorerPageRoutingModule
+    ExplorerPageRoutingModule,
+    HomePageModule
   ],
-  declarations: [ExplorerPage]
+  declarations: [ExplorerPage, SearchComponent]
 })
 export class ExplorerPageModule {}
