@@ -6,6 +6,8 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 import { SeriesPageRoutingModule } from './Series-routing.module';
 import { SeriesPage } from "./Series.page";
 import { SerieVueComponentModule } from "./SerieVue/SerieVue.module";
+import {SliderSeriesFilmsComponent} from "../components/slider-series-films/slider-series-films.component";
+import {StatsComponent} from "../components/stats/stats.component";
 
 @NgModule({
   imports: [
@@ -14,7 +16,9 @@ import { SerieVueComponentModule } from "./SerieVue/SerieVue.module";
     FormsModule,
     ExploreContainerComponentModule,
     SeriesPageRoutingModule,
-    SerieVueComponentModule
+    SerieVueComponentModule,
+    SliderSeriesFilmsComponent,
+    StatsComponent
   ],
   declarations: [SeriesPage]
 })
