@@ -9,6 +9,7 @@ import { FilmsPageRoutingModule } from './Films-routing.module';
 import {StatsComponent} from "../components/stats/stats.component";
 import {SliderSeriesFilmsComponent} from "../components/slider-series-films/slider-series-films.component";
 import {HeaderComponent} from "../components/header/header.component";
+import {HomePageModule} from "../Home/Home.module";
 
 @NgModule({
   imports: [
@@ -17,9 +18,8 @@ import {HeaderComponent} from "../components/header/header.component";
     FormsModule,
     ExploreContainerComponentModule,
     FilmsPageRoutingModule,
-    StatsComponent,
-    SliderSeriesFilmsComponent,
-    HeaderComponent
+    HomePageModule,
+
   ],
   declarations: [FilmsPage]
 })

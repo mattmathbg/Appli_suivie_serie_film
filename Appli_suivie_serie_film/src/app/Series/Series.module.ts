@@ -19,9 +19,6 @@ import {HomePageModule} from "../Home/Home.module";
     ExploreContainerComponentModule,
     SeriesPageRoutingModule,
     SerieVueComponentModule,
-    SliderSeriesFilmsComponent,
-    StatsComponent,
-    HeaderComponent,
     HomePageModule,
   ],
   declarations: [SeriesPage]

@@ -16,15 +16,8 @@ import {HeaderComponent} from "../components/header/header.component";
     FormsModule,
     ExploreContainerComponentModule,
     HomePageRoutingModule,
-    SliderSeriesFilmsComponent,
-    StatsComponent,
-    HeaderComponent
   ],
-  exports: [
-    HeaderComponent,
-    SliderSeriesFilmsComponent,
-    StatsComponent
-  ],
+
   declarations: [HomePage, SliderSeriesFilmsComponent, StatsComponent, HeaderComponent]
 })
 export class HomePageModule {}
