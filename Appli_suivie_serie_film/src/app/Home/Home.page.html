@@ -13,22 +13,6 @@
     </ion-toolbar>
   </ion-header>
 <ion-content class="ion-padding">
-  <div class="scroll-horizontal">
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-    </ion-card-header>
-    <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
-    </ion-card-content>
-  </ion-card>
-  </div>
-  <div class="scroll-horizontal">
-    @for (serie of getSerie(); track serie) {
-      <div class="carte-serie">
-        <img src="https://imgs.search.brave.com/5kcAYQrpl5aeqxxve6N3xjGivkGubPM54BN2uX42NIg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9mci53/ZWIuaW1nNS5hY3N0/YS5uZXQvY18yMTBf/MjgwL2ltZy8yMC9i/NC8yMGI0NzE0ODhm/NDVmOTI4YmQ4MjM4/MjI2ZDkxZWZjMi5q/cGc" alt="Serie">
-      </div>
-    }
-  </div>
+  <app-stats></app-stats>
+  <app-slider-series-films></app-slider-series-films>
 </ion-content>
