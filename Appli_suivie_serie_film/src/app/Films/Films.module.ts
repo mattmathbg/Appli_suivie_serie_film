@@ -8,6 +8,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 import { FilmsPageRoutingModule } from './Films-routing.module';
 import {StatsComponent} from "../components/stats/stats.component";
 import {SliderSeriesFilmsComponent} from "../components/slider-series-films/slider-series-films.component";
+import {HeaderComponent} from "../components/header/header.component";
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import {SliderSeriesFilmsComponent} from "../components/slider-series-films/slid
     ExploreContainerComponentModule,
     FilmsPageRoutingModule,
     StatsComponent,
-    SliderSeriesFilmsComponent
+    SliderSeriesFilmsComponent,
+    HeaderComponent
   ],
   declarations: [FilmsPage]
 })

@@ -7,9 +7,7 @@ import {DataService} from "../../Services/data.service";
     selector: 'app-stats',
     templateUrl: './stats.component.html',
     styleUrls: ['./stats.component.scss'],
-    imports: [
-        IonicModule
-    ]
+    standalone: false,
 })
 export class StatsComponent  implements OnInit {
   private data = inject(DataService);
