@@ -6,6 +6,8 @@ import { FilmsPage } from './Films.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { FilmsPageRoutingModule } from './Films-routing.module';
+import {StatsComponent} from "../components/stats/stats.component";
+import {SliderSeriesFilmsComponent} from "../components/slider-series-films/slider-series-films.component";
 
 @NgModule({
   imports: [
@@ -13,7 +15,9 @@ import { FilmsPageRoutingModule } from './Films-routing.module';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    FilmsPageRoutingModule
+    FilmsPageRoutingModule,
+    StatsComponent,
+    SliderSeriesFilmsComponent
   ],
   declarations: [FilmsPage]
 })
