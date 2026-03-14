@@ -1,0 +1,21 @@
+.scroll-horizontal {
+  display: flex;
+  overflow-x: scroll;
+  gap: 12px;
+  scroll-snap-type: x mandatory;
+}
+
+.scroll-horizontal::-webkit-scrollbar {
+  display: none;
+}
+
+.carte-serie {
+  flex: 0 0 auto; /* Empêche la carte de se rétrécir */
+  width: 50%; /* Largeur de l'affiche */
+
+  /* Point d'aimantation du slider (au début de la carte) */
+  scroll-snap-align: start;
+
+  border-radius: 8px;
+  overflow: hidden;
+}

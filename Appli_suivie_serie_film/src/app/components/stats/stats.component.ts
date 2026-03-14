@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, inject, Input, OnInit} from '@angular/core';
 import {IonicModule} from "@ionic/angular";
+import {DataSerieModel} from "../../models/data-serie.model";
+import {DataService} from "../../Services/data.service";
 
 @Component({
     selector: 'app-stats',
@@ -10,9 +12,18 @@ import {IonicModule} from "@ionic/angular";
     ]
 })
 export class StatsComponent  implements OnInit {
+  private data = inject(DataService);
+  nbSerieFilms! : number;
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit(): void {
+    this.nbSerieFilms = this.getLenDataSeries();
+  }
 
+  public getLenDataSeries(): number{
+    return this.data.getLenDataSeries();
+  }
+
+  protected readonly DataSerieModel = DataSerieModel;
 }

@@ -131,6 +131,9 @@ export class DataService {
 
   constructor() { }
 
+  public getLenDataSeries(): number{
+    return this.dataSeries.length;
+  }
   public getDataSeries(): DataSerieModel[] {
     return this.dataSeries;
   }
