@@ -1,0 +1,3595 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+.browserslistrc
+.editorconfig
+.eslintrc.json
+.gitignore
+android/.gitignore
+android/app/.gitignore
+android/app/build.gradle
+android/app/capacitor.build.gradle
+android/app/proguard-rules.pro
+android/app/src/androidTest/java/com/getcapacitor/myapp/ExampleInstrumentedTest.java
+android/app/src/main/AndroidManifest.xml
+android/app/src/main/AndroidManifest.xml.orig
+android/app/src/main/java/io/ionic/starter/MainActivity.java
+android/app/src/main/res/drawable-land-hdpi/splash.png
+android/app/src/main/res/drawable-land-mdpi/splash.png
+android/app/src/main/res/drawable-land-xhdpi/splash.png
+android/app/src/main/res/drawable-land-xxhdpi/splash.png
+android/app/src/main/res/drawable-land-xxxhdpi/splash.png
+android/app/src/main/res/drawable-port-hdpi/splash.png
+android/app/src/main/res/drawable-port-mdpi/splash.png
+android/app/src/main/res/drawable-port-xhdpi/splash.png
+android/app/src/main/res/drawable-port-xxhdpi/splash.png
+android/app/src/main/res/drawable-port-xxxhdpi/splash.png
+android/app/src/main/res/drawable-v24/ic_launcher_foreground.xml
+android/app/src/main/res/drawable/ic_launcher_background.xml
+android/app/src/main/res/drawable/splash.png
+android/app/src/main/res/layout/activity_main.xml
+android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+android/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png
+android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png
+android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+android/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png
+android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png
+android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+android/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png
+android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png
+android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+android/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png
+android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png
+android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png
+android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png
+android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+android/app/src/main/res/values/ic_launcher_background.xml
+android/app/src/main/res/values/strings.xml
+android/app/src/main/res/values/styles.xml
+android/app/src/main/res/xml/file_paths.xml
+android/app/src/test/java/com/getcapacitor/myapp/ExampleUnitTest.java
+android/build.gradle
+android/capacitor.settings.gradle
+android/gradle.properties
+android/gradle/wrapper/gradle-wrapper.jar
+android/gradle/wrapper/gradle-wrapper.properties
+android/gradlew
+android/gradlew.bat
+android/settings.gradle
+android/variables.gradle
+angular.json
+capacitor.config.ts
+ionic.config.json
+karma.conf.js
+package.json
+src/app/app-routing.module.ts
+src/app/app.component.html
+src/app/app.component.scss
+src/app/app.component.spec.ts
+src/app/app.component.ts
+src/app/app.module.ts
+src/app/components/header/header.component.html
+src/app/components/header/header.component.scss
+src/app/components/header/header.component.spec.ts
+src/app/components/header/header.component.ts
+src/app/components/slider-series-films/slider-series-films.component.html
+src/app/components/slider-series-films/slider-series-films.component.scss
+src/app/components/slider-series-films/slider-series-films.component.spec.ts
+src/app/components/slider-series-films/slider-series-films.component.ts
+src/app/components/stats/stats.component.html
+src/app/components/stats/stats.component.scss
+src/app/components/stats/stats.component.spec.ts
+src/app/components/stats/stats.component.ts
+src/app/explore-container/explore-container.component.html
+src/app/explore-container/explore-container.component.scss
+src/app/explore-container/explore-container.component.spec.ts
+src/app/explore-container/explore-container.component.ts
+src/app/explore-container/explore-container.module.ts
+src/app/explorer/eplorer.page.html
+src/app/explorer/explorer-routing.module.ts
+src/app/explorer/explorer.module.ts
+src/app/explorer/explorer.page.scss
+src/app/explorer/explorer.page.spec.ts
+src/app/explorer/explorer.page.ts
+src/app/Films/Films-routing.module.ts
+src/app/Films/Films.module.ts
+src/app/Films/Films.page.html
+src/app/Films/Films.page.scss
+src/app/Films/Films.page.spec.ts
+src/app/Films/Films.page.ts
+src/app/Home/Home-routing.module.ts
+src/app/Home/Home.module.ts
+src/app/Home/Home.page.html
+src/app/Home/Home.page.scss
+src/app/Home/Home.page.spec.ts
+src/app/Home/Home.page.ts
+src/app/models/data-serie.model.ts
+src/app/parametre/parametre-routing.module.ts
+src/app/parametre/parametre.module.ts
+src/app/parametre/parametre.page.html
+src/app/parametre/parametre.page.scss
+src/app/parametre/parametre.page.spec.ts
+src/app/parametre/parametre.page.ts
+src/app/Series/Series-routing.module.ts
+src/app/Series/Series.module.ts
+src/app/Series/Series.page.html
+src/app/Series/Series.page.scss
+src/app/Series/Series.page.spec.ts
+src/app/Series/Series.page.ts
+src/app/Series/SerieVue/SerieVue.component.html
+src/app/Series/SerieVue/SerieVue.component.scss
+src/app/Series/SerieVue/SerieVue.component.spec.ts
+src/app/Series/SerieVue/SerieVue.component.ts
+src/app/Series/SerieVue/SerieVue.module.ts
+src/app/Services/data.service.spec.ts
+src/app/Services/data.service.ts
+src/app/tabs/tabs-routing.module.ts
+src/app/tabs/tabs.module.ts
+src/app/tabs/tabs.page.html
+src/app/tabs/tabs.page.scss
+src/app/tabs/tabs.page.spec.ts
+src/app/tabs/tabs.page.ts
+src/assets/icon/favicon.png
+src/assets/shapes.svg
+src/environments/environment.prod.ts
+src/environments/environment.ts
+src/global.scss
+src/index.html
+src/main.ts
+src/polyfills.ts
+src/test.ts
+src/theme/variables.scss
+src/zone-flags.ts
+tsconfig.app.json
+tsconfig.json
+tsconfig.spec.json
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path=".browserslistrc">
+# This file is used by the build system to adjust CSS and JS output to support the specified browsers below.
+# For additional information regarding the format and rule options, please see:
+# https://github.com/browserslist/browserslist#queries
+
+# For the full list of supported browsers by the Angular framework, please see:
+# https://angular.dev/reference/versions#browser-support
+
+# You can see what browsers were selected by your queries by running:
+#   npx browserslist
+
+Chrome >=107
+Firefox >=106
+Edge >=107
+Safari >=16.1
+iOS >=16.1
+</file>
+
+<file path=".editorconfig">
+# Editor configuration, see https://editorconfig.org
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.ts]
+quote_type = single
+
+[*.md]
+max_line_length = off
+trim_trailing_whitespace = false
+</file>
+
+<file path=".eslintrc.json">
+{
+  "root": true,
+  "ignorePatterns": ["projects/**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["tsconfig.json"],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ],
+      "rules": {
+        "@angular-eslint/prefer-standalone": "off",
+        "@angular-eslint/component-class-suffix": [
+          "error",
+          {
+            "suffixes": ["Page", "Component"]
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase"
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {}
+    }
+  ]
+}
+</file>
+
+<file path=".gitignore">
+# Specifies intentionally untracked files to ignore when using Git
+# http://git-scm.com/docs/gitignore
+
+*~
+*.sw[mnpcod]
+.tmp
+*.tmp
+*.tmp.*
+UserInterfaceState.xcuserstate
+$RECYCLE.BIN/
+
+*.log
+log.txt
+
+
+/.sourcemaps
+/.versions
+/coverage
+
+# Ionic
+/.ionic
+/www
+/platforms
+/plugins
+
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+
+# Miscellaneous
+/.angular
+/.angular/cache
+.sass-cache/
+/.nx
+/.nx/cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# System files
+.DS_Store
+Thumbs.db
+</file>
+
+<file path="android/.gitignore">
+# Using Android gitignore template: https://github.com/github/gitignore/blob/HEAD/Android.gitignore
+
+# Built application files
+*.apk
+*.aar
+*.ap_
+*.aab
+
+# Files for the ART/Dalvik VM
+*.dex
+
+# Java class files
+*.class
+
+# Generated files
+bin/
+gen/
+out/
+#  Uncomment the following line in case you need and you don't have the release build type files in your app
+# release/
+
+# Gradle files
+.gradle/
+build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Proguard folder generated by Eclipse
+proguard/
+
+# Log Files
+*.log
+
+# Android Studio Navigation editor temp files
+.navigation/
+
+# Android Studio captures folder
+captures/
+
+# IntelliJ
+*.iml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/assetWizardSettings.xml
+.idea/dictionaries
+.idea/libraries
+# Android Studio 3 in .gitignore file.
+.idea/caches
+.idea/modules.xml
+# Comment next line if keeping position of elements in Navigation Editor is relevant for you
+.idea/navEditor.xml
+
+# Keystore files
+# Uncomment the following lines if you do not want to check your keystore files in.
+#*.jks
+#*.keystore
+
+# External native build folder generated in Android Studio 2.2 and later
+.externalNativeBuild
+.cxx/
+
+# Google Services (e.g. APIs or Firebase)
+# google-services.json
+
+# Freeline
+freeline.py
+freeline/
+freeline_project_description.json
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/readme.md
+
+# Version control
+vcs.xml
+
+# lint
+lint/intermediates/
+lint/generated/
+lint/outputs/
+lint/tmp/
+# lint/reports/
+
+# Android Profiling
+*.hprof
+
+# Cordova plugins for Capacitor
+capacitor-cordova-android-plugins
+
+# Copied web assets
+app/src/main/assets/public
+
+# Generated Config files
+app/src/main/assets/capacitor.config.json
+app/src/main/assets/capacitor.plugins.json
+app/src/main/res/xml/config.xml
+</file>
+
+<file path="android/app/.gitignore">
+/build/*
+!/build/.npmkeep
+</file>
+
+<file path="android/app/build.gradle">
+apply plugin: 'com.android.application'
+
+android {
+    namespace = "io.ionic.starter"
+    compileSdk = rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId "io.ionic.starter"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        aaptOptions {
+             // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
+             // Default: https://android.googlesource.com/platform/frameworks/base/+/282e181b58cf72b6ca770dc7ca5f91f135444502/tools/aapt/AaptAssets.cpp#61
+            ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    flatDir{
+        dirs '../capacitor-cordova-android-plugins/src/main/libs', 'libs'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
+    implementation "androidx.coordinatorlayout:coordinatorlayout:$androidxCoordinatorLayoutVersion"
+    implementation "androidx.core:core-splashscreen:$coreSplashScreenVersion"
+    implementation project(':capacitor-android')
+    testImplementation "junit:junit:$junitVersion"
+    androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
+    implementation project(':capacitor-cordova-android-plugins')
+}
+
+apply from: 'capacitor.build.gradle'
+
+try {
+    def servicesJSON = file('google-services.json')
+    if (servicesJSON.text) {
+        apply plugin: 'com.google.gms.google-services'
+    }
+} catch(Exception e) {
+    logger.info("google-services.json not found, google-services plugin not applied. Push Notifications won't work")
+}
+</file>
+
+<file path="android/app/capacitor.build.gradle">
+// DO NOT EDIT THIS FILE! IT IS GENERATED EACH TIME "capacitor update" IS RUN
+
+android {
+  compileOptions {
+      sourceCompatibility JavaVersion.VERSION_21
+      targetCompatibility JavaVersion.VERSION_21
+  }
+}
+
+apply from: "../capacitor-cordova-android-plugins/cordova.variables.gradle"
+dependencies {
+    implementation project(':capacitor-app')
+    implementation project(':capacitor-haptics')
+    implementation project(':capacitor-keyboard')
+    implementation project(':capacitor-status-bar')
+
+}
+
+
+if (hasProperty('postBuildExtras')) {
+  postBuildExtras()
+}
+</file>
+
+<file path="android/app/proguard-rules.pro">
+# Add project specific ProGuard rules here.
+# You can control the set of applied configuration files using the
+# proguardFiles setting in build.gradle.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+
+# Uncomment this to preserve the line number information for
+# debugging stack traces.
+#-keepattributes SourceFile,LineNumberTable
+
+# If you keep the line number information, uncomment this to
+# hide the original source file name.
+#-renamesourcefileattribute SourceFile
+</file>
+
+<file path="android/app/src/androidTest/java/com/getcapacitor/myapp/ExampleInstrumentedTest.java">
+package com.getcapacitor.myapp;
+
+import static org.junit.Assert.*;
+
+import android.content.Context;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
+import androidx.test.platform.app.InstrumentationRegistry;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+/**
+ * Instrumented test, which will execute on an Android device.
+ *
+ * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
+ */
+@RunWith(AndroidJUnit4.class)
+public class ExampleInstrumentedTest {
+
+    @Test
+    public void useAppContext() throws Exception {
+        // Context of the app under test.
+        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
+
+        assertEquals("com.getcapacitor.app", appContext.getPackageName());
+    }
+}
+</file>
+
+<file path="android/app/src/main/AndroidManifest.xml">
+<?xml version='1.0' encoding='utf-8'?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/AppTheme" android:usesCleartextTraffic="true">
+        <activity android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode|navigation|density" android:exported="true" android:label="@string/title_activity_main" android:launchMode="singleTask" android:name=".MainActivity" android:theme="@style/AppTheme.NoActionBarLaunch">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <provider android:authorities="${applicationId}.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="androidx.core.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+</manifest>
+</file>
+
+<file path="android/app/src/main/AndroidManifest.xml.orig">
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode|navigation|density"
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBarLaunch"
+            android:launchMode="singleTask"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"></meta-data>
+        </provider>
+    </application>
+
+    <!-- Permissions -->
+
+    <uses-permission android:name="android.permission.INTERNET" />
+</manifest>
+</file>
+
+<file path="android/app/src/main/java/io/ionic/starter/MainActivity.java">
+package io.ionic.starter;
+
+import com.getcapacitor.BridgeActivity;
+
+public class MainActivity extends BridgeActivity {}
+</file>
+
+<file path="android/app/src/main/res/drawable-v24/ic_launcher_foreground.xml">
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportHeight="108"
+    android:viewportWidth="108">
+    <path
+        android:fillType="evenOdd"
+        android:pathData="M32,64C32,64 38.39,52.99 44.13,50.95C51.37,48.37 70.14,49.57 70.14,49.57L108.26,87.69L108,109.01L75.97,107.97L32,64Z"
+        android:strokeColor="#00000000"
+        android:strokeWidth="1">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endX="78.5885"
+                android:endY="90.9159"
+                android:startX="48.7653"
+                android:startY="61.0927"
+                android:type="linear">
+                <item
+                    android:color="#44000000"
+                    android:offset="0.0" />
+                <item
+                    android:color="#00000000"
+                    android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillType="nonZero"
+        android:pathData="M66.94,46.02L66.94,46.02C72.44,50.07 76,56.61 76,64L32,64C32,56.61 35.56,50.11 40.98,46.06L36.18,41.19C35.45,40.45 35.45,39.3 36.18,38.56C36.91,37.81 38.05,37.81 38.78,38.56L44.25,44.05C47.18,42.57 50.48,41.71 54,41.71C57.48,41.71 60.78,42.57 63.68,44.05L69.11,38.56C69.84,37.81 70.98,37.81 71.71,38.56C72.44,39.3 72.44,40.45 71.71,41.19L66.94,46.02ZM62.94,56.92C64.08,56.92 65,56.01 65,54.88C65,53.76 64.08,52.85 62.94,52.85C61.8,52.85 60.88,53.76 60.88,54.88C60.88,56.01 61.8,56.92 62.94,56.92ZM45.06,56.92C46.2,56.92 47.13,56.01 47.13,54.88C47.13,53.76 46.2,52.85 45.06,52.85C43.92,52.85 43,53.76 43,54.88C43,56.01 43.92,56.92 45.06,56.92Z"
+        android:strokeColor="#00000000"
+        android:strokeWidth="1" />
+</vector>
+</file>
+
+<file path="android/app/src/main/res/drawable/ic_launcher_background.xml">
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportHeight="108"
+    android:viewportWidth="108">
+    <path
+        android:fillColor="#26A69A"
+        android:pathData="M0,0h108v108h-108z" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M9,0L9,108"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M19,0L19,108"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M29,0L29,108"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M39,0L39,108"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M49,0L49,108"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M59,0L59,108"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M69,0L69,108"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M79,0L79,108"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M89,0L89,108"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M99,0L99,108"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,9L108,9"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,19L108,19"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,29L108,29"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,39L108,39"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,49L108,49"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,59L108,59"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,69L108,69"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,79L108,79"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,89L108,89"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,99L108,99"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M19,29L89,29"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M19,39L89,39"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M19,49L89,49"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M19,59L89,59"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M19,69L89,69"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M19,79L89,79"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M29,19L29,89"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M39,19L39,89"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M49,19L49,89"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M59,19L59,89"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M69,19L69,89"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M79,19L79,89"
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.8" />
+</vector>
+</file>
+
+<file path="android/app/src/main/res/layout/activity_main.xml">
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</file>
+
+<file path="android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml">
+<?xml version="1.0" encoding="utf-8"?>
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/ic_launcher_background"/>
+    <foreground android:drawable="@mipmap/ic_launcher_foreground"/>
+</adaptive-icon>
+</file>
+
+<file path="android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml">
+<?xml version="1.0" encoding="utf-8"?>
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/ic_launcher_background"/>
+    <foreground android:drawable="@mipmap/ic_launcher_foreground"/>
+</adaptive-icon>
+</file>
+
+<file path="android/app/src/main/res/values/ic_launcher_background.xml">
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ic_launcher_background">#FFFFFF</color>
+</resources>
+</file>
+
+<file path="android/app/src/main/res/values/strings.xml">
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Appli_suivie_serie_film</string>
+    <string name="title_activity_main">Appli_suivie_serie_film</string>
+    <string name="package_name">io.ionic.starter</string>
+    <string name="custom_url_scheme">io.ionic.starter</string>
+</resources>
+</file>
+
+<file path="android/app/src/main/res/values/styles.xml">
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:background">@null</item>
+    </style>
+
+
+    <style name="AppTheme.NoActionBarLaunch" parent="Theme.SplashScreen">
+        <item name="android:background">@drawable/splash</item>
+    </style>
+</resources>
+</file>
+
+<file path="android/app/src/main/res/xml/file_paths.xml">
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <external-path name="my_images" path="." />
+    <cache-path name="my_cache_images" path="." />
+</paths>
+</file>
+
+<file path="android/app/src/test/java/com/getcapacitor/myapp/ExampleUnitTest.java">
+package com.getcapacitor.myapp;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+/**
+ * Example local unit test, which will execute on the development machine (host).
+ *
+ * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
+ */
+public class ExampleUnitTest {
+
+    @Test
+    public void addition_isCorrect() throws Exception {
+        assertEquals(4, 2 + 2);
+    }
+}
+</file>
+
+<file path="android/build.gradle">
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.13.0'
+        classpath 'com.google.gms:google-services:4.4.4'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+apply from: "variables.gradle"
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+</file>
+
+<file path="android/capacitor.settings.gradle">
+// DO NOT EDIT THIS FILE! IT IS GENERATED EACH TIME "capacitor update" IS RUN
+include ':capacitor-android'
+project(':capacitor-android').projectDir = new File('../node_modules/@capacitor/android/capacitor')
+
+include ':capacitor-app'
+project(':capacitor-app').projectDir = new File('../node_modules/@capacitor/app/android')
+
+include ':capacitor-haptics'
+project(':capacitor-haptics').projectDir = new File('../node_modules/@capacitor/haptics/android')
+
+include ':capacitor-keyboard'
+project(':capacitor-keyboard').projectDir = new File('../node_modules/@capacitor/keyboard/android')
+
+include ':capacitor-status-bar'
+project(':capacitor-status-bar').projectDir = new File('../node_modules/@capacitor/status-bar/android')
+</file>
+
+<file path="android/gradle.properties">
+# Project-wide Gradle settings.
+
+# IDE (e.g. Android Studio) users:
+# Gradle settings configured through the IDE *will override*
+# any settings specified in this file.
+
+# For more details on how to configure your build environment visit
+# http://www.gradle.org/docs/current/userguide/build_environment.html
+
+# Specifies the JVM arguments used for the daemon process.
+# The setting is particularly useful for tweaking memory settings.
+org.gradle.jvmargs=-Xmx1536m
+
+# When configured, Gradle will run in incubating parallel mode.
+# This option should only be used with decoupled projects. More details, visit
+# http://www.gradle.org/docs/current/userguide/multi_project_builds.html#sec:decoupled_projects
+# org.gradle.parallel=true
+
+# AndroidX package structure to make it clearer which packages are bundled with the
+# Android operating system, and which are packaged with your app's APK
+# https://developer.android.com/topic/libraries/support-library/androidx-rn
+android.useAndroidX=true
+</file>
+
+<file path="android/gradle/wrapper/gradle-wrapper.properties">
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+distributionUrl=https\://services.gradle.org/distributions/gradle-8.14.3-all.zip
+networkTimeout=10000
+validateDistributionUrl=true
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+</file>
+
+<file path="android/gradlew">
+#!/bin/sh
+
+#
+# Copyright © 2015-2021 the original authors.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+##############################################################################
+#
+#   Gradle start up script for POSIX generated by Gradle.
+#
+#   Important for running:
+#
+#   (1) You need a POSIX-compliant shell to run this script. If your /bin/sh is
+#       noncompliant, but you have some other compliant shell such as ksh or
+#       bash, then to run this script, type that shell name before the whole
+#       command line, like:
+#
+#           ksh Gradle
+#
+#       Busybox and similar reduced shells will NOT work, because this script
+#       requires all of these POSIX shell features:
+#         * functions;
+#         * expansions «$var», «${var}», «${var:-default}», «${var+SET}»,
+#           «${var#prefix}», «${var%suffix}», and «$( cmd )»;
+#         * compound commands having a testable exit status, especially «case»;
+#         * various built-in commands including «command», «set», and «ulimit».
+#
+#   Important for patching:
+#
+#   (2) This script targets any POSIX shell, so it avoids extensions provided
+#       by Bash, Ksh, etc; in particular arrays are avoided.
+#
+#       The "traditional" practice of packing multiple parameters into a
+#       space-separated string is a well documented source of bugs and security
+#       problems, so this is (mostly) avoided, by progressively accumulating
+#       options in "$@", and eventually passing that to Java.
+#
+#       Where the inherited environment variables (DEFAULT_JVM_OPTS, JAVA_OPTS,
+#       and GRADLE_OPTS) rely on word-splitting, this is performed explicitly;
+#       see the in-line comments for details.
+#
+#       There are tweaks for specific operating systems such as AIX, CygWin,
+#       Darwin, MinGW, and NonStop.
+#
+#   (3) This script is generated from the Groovy template
+#       https://github.com/gradle/gradle/blob/HEAD/platforms/jvm/plugins-application/src/main/resources/org/gradle/api/internal/plugins/unixStartScript.txt
+#       within the Gradle project.
+#
+#       You can find Gradle at https://github.com/gradle/gradle/.
+#
+##############################################################################
+
+# Attempt to set APP_HOME
+
+# Resolve links: $0 may be a link
+app_path=$0
+
+# Need this for daisy-chained symlinks.
+while
+    APP_HOME=${app_path%"${app_path##*/}"}  # leaves a trailing /; empty if no leading path
+    [ -h "$app_path" ]
+do
+    ls=$( ls -ld "$app_path" )
+    link=${ls#*' -> '}
+    case $link in             #(
+      /*)   app_path=$link ;; #(
+      *)    app_path=$APP_HOME$link ;;
+    esac
+done
+
+# This is normally unused
+# shellcheck disable=SC2034
+APP_BASE_NAME=${0##*/}
+# Discard cd standard output in case $CDPATH is set (https://github.com/gradle/gradle/issues/25036)
+APP_HOME=$( cd -P "${APP_HOME:-./}" > /dev/null && printf '%s\n' "$PWD" ) || exit
+
+# Use the maximum available, or set MAX_FD != -1 to use that value.
+MAX_FD=maximum
+
+warn () {
+    echo "$*"
+} >&2
+
+die () {
+    echo
+    echo "$*"
+    echo
+    exit 1
+} >&2
+
+# OS specific support (must be 'true' or 'false').
+cygwin=false
+msys=false
+darwin=false
+nonstop=false
+case "$( uname )" in                #(
+  CYGWIN* )         cygwin=true  ;; #(
+  Darwin* )         darwin=true  ;; #(
+  MSYS* | MINGW* )  msys=true    ;; #(
+  NONSTOP* )        nonstop=true ;;
+esac
+
+CLASSPATH="\\\"\\\""
+
+
+# Determine the Java command to use to start the JVM.
+if [ -n "$JAVA_HOME" ] ; then
+    if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
+        # IBM's JDK on AIX uses strange locations for the executables
+        JAVACMD=$JAVA_HOME/jre/sh/java
+    else
+        JAVACMD=$JAVA_HOME/bin/java
+    fi
+    if [ ! -x "$JAVACMD" ] ; then
+        die "ERROR: JAVA_HOME is set to an invalid directory: $JAVA_HOME
+
+Please set the JAVA_HOME variable in your environment to match the
+location of your Java installation."
+    fi
+else
+    JAVACMD=java
+    if ! command -v java >/dev/null 2>&1
+    then
+        die "ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
+
+Please set the JAVA_HOME variable in your environment to match the
+location of your Java installation."
+    fi
+fi
+
+# Increase the maximum file descriptors if we can.
+if ! "$cygwin" && ! "$darwin" && ! "$nonstop" ; then
+    case $MAX_FD in #(
+      max*)
+        # In POSIX sh, ulimit -H is undefined. That's why the result is checked to see if it worked.
+        # shellcheck disable=SC2039,SC3045
+        MAX_FD=$( ulimit -H -n ) ||
+            warn "Could not query maximum file descriptor limit"
+    esac
+    case $MAX_FD in  #(
+      '' | soft) :;; #(
+      *)
+        # In POSIX sh, ulimit -n is undefined. That's why the result is checked to see if it worked.
+        # shellcheck disable=SC2039,SC3045
+        ulimit -n "$MAX_FD" ||
+            warn "Could not set maximum file descriptor limit to $MAX_FD"
+    esac
+fi
+
+# Collect all arguments for the java command, stacking in reverse order:
+#   * args from the command line
+#   * the main class name
+#   * -classpath
+#   * -D...appname settings
+#   * --module-path (only if needed)
+#   * DEFAULT_JVM_OPTS, JAVA_OPTS, and GRADLE_OPTS environment variables.
+
+# For Cygwin or MSYS, switch paths to Windows format before running java
+if "$cygwin" || "$msys" ; then
+    APP_HOME=$( cygpath --path --mixed "$APP_HOME" )
+    CLASSPATH=$( cygpath --path --mixed "$CLASSPATH" )
+
+    JAVACMD=$( cygpath --unix "$JAVACMD" )
+
+    # Now convert the arguments - kludge to limit ourselves to /bin/sh
+    for arg do
+        if
+            case $arg in                                #(
+              -*)   false ;;                            # don't mess with options #(
+              /?*)  t=${arg#/} t=/${t%%/*}              # looks like a POSIX filepath
+                    [ -e "$t" ] ;;                      #(
+              *)    false ;;
+            esac
+        then
+            arg=$( cygpath --path --ignore --mixed "$arg" )
+        fi
+        # Roll the args list around exactly as many times as the number of
+        # args, so each arg winds up back in the position where it started, but
+        # possibly modified.
+        #
+        # NB: a `for` loop captures its iteration list before it begins, so
+        # changing the positional parameters here affects neither the number of
+        # iterations, nor the values presented in `arg`.
+        shift                   # remove old arg
+        set -- "$@" "$arg"      # push replacement arg
+    done
+fi
+
+
+# Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
+DEFAULT_JVM_OPTS='"-Xmx64m" "-Xms64m"'
+
+# Collect all arguments for the java command:
+#   * DEFAULT_JVM_OPTS, JAVA_OPTS, and optsEnvironmentVar are not allowed to contain shell fragments,
+#     and any embedded shellness will be escaped.
+#   * For example: A user cannot expect ${Hostname} to be expanded, as it is an environment variable and will be
+#     treated as '${Hostname}' itself on the command line.
+
+set -- \
+        "-Dorg.gradle.appname=$APP_BASE_NAME" \
+        -classpath "$CLASSPATH" \
+        -jar "$APP_HOME/gradle/wrapper/gradle-wrapper.jar" \
+        "$@"
+
+# Stop when "xargs" is not available.
+if ! command -v xargs >/dev/null 2>&1
+then
+    die "xargs is not available"
+fi
+
+# Use "xargs" to parse quoted args.
+#
+# With -n1 it outputs one arg per line, with the quotes and backslashes removed.
+#
+# In Bash we could simply go:
+#
+#   readarray ARGS < <( xargs -n1 <<<"$var" ) &&
+#   set -- "${ARGS[@]}" "$@"
+#
+# but POSIX shell has neither arrays nor command substitution, so instead we
+# post-process each arg (as a line of input to sed) to backslash-escape any
+# character that might be a shell metacharacter, then use eval to reverse
+# that process (while maintaining the separation between arguments), and wrap
+# the whole thing up as a single "set" statement.
+#
+# This will of course break if any of these variables contains a newline or
+# an unmatched quote.
+#
+
+eval "set -- $(
+        printf '%s\n' "$DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS" |
+        xargs -n1 |
+        sed ' s~[^-[:alnum:]+,./:=@_]~\\&~g; ' |
+        tr '\n' ' '
+    )" '"$@"'
+
+exec "$JAVACMD" "$@"
+</file>
+
+<file path="android/gradlew.bat">
+@rem
+@rem Copyright 2015 the original author or authors.
+@rem
+@rem Licensed under the Apache License, Version 2.0 (the "License");
+@rem you may not use this file except in compliance with the License.
+@rem You may obtain a copy of the License at
+@rem
+@rem      https://www.apache.org/licenses/LICENSE-2.0
+@rem
+@rem Unless required by applicable law or agreed to in writing, software
+@rem distributed under the License is distributed on an "AS IS" BASIS,
+@rem WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+@rem See the License for the specific language governing permissions and
+@rem limitations under the License.
+@rem
+@rem SPDX-License-Identifier: Apache-2.0
+@rem
+
+@if "%DEBUG%"=="" @echo off
+@rem ##########################################################################
+@rem
+@rem  Gradle startup script for Windows
+@rem
+@rem ##########################################################################
+
+@rem Set local scope for the variables with windows NT shell
+if "%OS%"=="Windows_NT" setlocal
+
+set DIRNAME=%~dp0
+if "%DIRNAME%"=="" set DIRNAME=.
+@rem This is normally unused
+set APP_BASE_NAME=%~n0
+set APP_HOME=%DIRNAME%
+
+@rem Resolve any "." and ".." in APP_HOME to make it shorter.
+for %%i in ("%APP_HOME%") do set APP_HOME=%%~fi
+
+@rem Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
+set DEFAULT_JVM_OPTS="-Xmx64m" "-Xms64m"
+
+@rem Find java.exe
+if defined JAVA_HOME goto findJavaFromJavaHome
+
+set JAVA_EXE=java.exe
+%JAVA_EXE% -version >NUL 2>&1
+if %ERRORLEVEL% equ 0 goto execute
+
+echo. 1>&2
+echo ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH. 1>&2
+echo. 1>&2
+echo Please set the JAVA_HOME variable in your environment to match the 1>&2
+echo location of your Java installation. 1>&2
+
+goto fail
+
+:findJavaFromJavaHome
+set JAVA_HOME=%JAVA_HOME:"=%
+set JAVA_EXE=%JAVA_HOME%/bin/java.exe
+
+if exist "%JAVA_EXE%" goto execute
+
+echo. 1>&2
+echo ERROR: JAVA_HOME is set to an invalid directory: %JAVA_HOME% 1>&2
+echo. 1>&2
+echo Please set the JAVA_HOME variable in your environment to match the 1>&2
+echo location of your Java installation. 1>&2
+
+goto fail
+
+:execute
+@rem Setup the command line
+
+set CLASSPATH=
+
+
+@rem Execute Gradle
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %GRADLE_OPTS% "-Dorg.gradle.appname=%APP_BASE_NAME%" -classpath "%CLASSPATH%" -jar "%APP_HOME%\gradle\wrapper\gradle-wrapper.jar" %*
+
+:end
+@rem End local scope for the variables with windows NT shell
+if %ERRORLEVEL% equ 0 goto mainEnd
+
+:fail
+rem Set variable GRADLE_EXIT_CONSOLE if you need the _script_ return code instead of
+rem the _cmd.exe /c_ return code!
+set EXIT_CODE=%ERRORLEVEL%
+if %EXIT_CODE% equ 0 set EXIT_CODE=1
+if not ""=="%GRADLE_EXIT_CONSOLE%" exit %EXIT_CODE%
+exit /b %EXIT_CODE%
+
+:mainEnd
+if "%OS%"=="Windows_NT" endlocal
+
+:omega
+</file>
+
+<file path="android/settings.gradle">
+include ':app'
+include ':capacitor-cordova-android-plugins'
+project(':capacitor-cordova-android-plugins').projectDir = new File('./capacitor-cordova-android-plugins/')
+
+apply from: 'capacitor.settings.gradle'
+</file>
+
+<file path="android/variables.gradle">
+ext {
+    minSdkVersion = 24
+    compileSdkVersion = 36
+    targetSdkVersion = 36
+    androidxActivityVersion = '1.11.0'
+    androidxAppCompatVersion = '1.7.1'
+    androidxCoordinatorLayoutVersion = '1.3.0'
+    androidxCoreVersion = '1.17.0'
+    androidxFragmentVersion = '1.8.9'
+    coreSplashScreenVersion = '1.2.0'
+    androidxWebkitVersion = '1.14.0'
+    junitVersion = '4.13.2'
+    androidxJunitVersion = '1.3.0'
+    androidxEspressoCoreVersion = '3.7.0'
+    cordovaAndroidVersion = '14.0.1'
+}
+</file>
+
+<file path="angular.json">
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "app": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "www",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "assets"
+              },
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/ionicons/dist/ionicons/svg",
+                "output": "./svg"
+              }
+            ],
+            "styles": ["src/global.scss", "src/theme/variables.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            },
+            "ci": {
+              "progress": false
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "app:build:production"
+            },
+            "development": {
+              "buildTarget": "app:build:development"
+            },
+            "ci": {
+              "progress": false
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "assets"
+              },
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/ionicons/dist/ionicons/svg",
+                "output": "./svg"
+              }
+            ],
+            "styles": ["src/global.scss", "src/theme/variables.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "ci": {
+              "progress": false,
+              "watch": false
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "schematicCollections": [
+      "@ionic/angular-toolkit"
+    ]
+  },
+  "schematics": {
+    "@ionic/angular-toolkit:component": {
+      "styleext": "scss"
+    },
+    "@ionic/angular-toolkit:page": {
+      "styleext": "scss"
+    }
+  }
+}
+</file>
+
+<file path="capacitor.config.ts">
+import type { CapacitorConfig } from '@capacitor/cli';
+
+const config: CapacitorConfig = {
+  appId: 'io.ionic.starter',
+  appName: 'Appli_suivie_serie_film',
+  webDir: 'www'
+};
+
+export default config;
+</file>
+
+<file path="ionic.config.json">
+{
+  "name": "Appli_suivie_serie_film",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
+</file>
+
+<file path="karma.conf.js">
+// Karma configuration file, see link for more information
+// https://karma-runner.github.io/1.0/config/configuration-file.html
+
+module.exports = function (config) {
+  config.set({
+    basePath: '',
+    frameworks: ['jasmine', '@angular-devkit/build-angular'],
+    plugins: [
+      require('karma-jasmine'),
+      require('karma-chrome-launcher'),
+      require('karma-jasmine-html-reporter'),
+      require('karma-coverage'),
+      require('@angular-devkit/build-angular/plugins/karma')
+    ],
+    client: {
+      jasmine: {
+        // you can add configuration options for Jasmine here
+        // the possible options are listed at https://jasmine.github.io/api/edge/Configuration.html
+        // for example, you can disable the random execution with `random: false`
+        // or set a specific seed with `seed: 4321`
+      },
+      clearContext: false // leave Jasmine Spec Runner output visible in browser
+    },
+    jasmineHtmlReporter: {
+      suppressAll: true // removes the duplicated traces
+    },
+    coverageReporter: {
+      dir: require('path').join(__dirname, './coverage/app'),
+      subdir: '.',
+      reporters: [
+        { type: 'html' },
+        { type: 'text-summary' }
+      ]
+    },
+    reporters: ['progress', 'kjhtml'],
+    port: 9876,
+    colors: true,
+    logLevel: config.LOG_INFO,
+    autoWatch: true,
+    browsers: ['Chrome'],
+    singleRun: false,
+    restartOnFileChange: true
+  });
+};
+</file>
+
+<file path="package.json">
+{
+  "name": "Appli_suivie_serie_film",
+  "version": "0.0.1",
+  "author": "Ionic Framework",
+  "homepage": "https://ionicframework.com/",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "lint": "ng lint"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^20.0.0",
+    "@angular/common": "^20.0.0",
+    "@angular/compiler": "^20.0.0",
+    "@angular/core": "^20.0.0",
+    "@angular/forms": "^20.0.0",
+    "@angular/platform-browser": "^20.0.0",
+    "@angular/platform-browser-dynamic": "^20.0.0",
+    "@angular/router": "^20.0.0",
+    "@capacitor/android": "8.2.0",
+    "@capacitor/app": "8.0.1",
+    "@capacitor/core": "8.2.0",
+    "@capacitor/haptics": "8.0.1",
+    "@capacitor/keyboard": "8.0.1",
+    "@capacitor/status-bar": "8.0.1",
+    "@ionic/angular": "^8.0.0",
+    "ionicons": "^7.0.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^20.0.0",
+    "@angular-eslint/builder": "^20.0.0",
+    "@angular-eslint/eslint-plugin": "^20.0.0",
+    "@angular-eslint/eslint-plugin-template": "^20.0.0",
+    "@angular-eslint/schematics": "^20.0.0",
+    "@angular-eslint/template-parser": "^20.0.0",
+    "@angular/cli": "^20.0.0",
+    "@angular/compiler-cli": "^20.0.0",
+    "@angular/language-service": "^20.0.0",
+    "@capacitor/cli": "8.2.0",
+    "@ionic/angular-toolkit": "^12.0.0",
+    "@types/jasmine": "~5.1.0",
+    "@typescript-eslint/eslint-plugin": "^8.18.0",
+    "@typescript-eslint/parser": "^8.18.0",
+    "eslint": "^9.16.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsdoc": "^48.2.1",
+    "eslint-plugin-prefer-arrow": "1.2.2",
+    "jasmine-core": "~5.1.0",
+    "jasmine-spec-reporter": "~5.0.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~5.9.0"
+  },
+  "description": "An Ionic project"
+}
+</file>
+
+<file path="src/app/app-routing.module.ts">
+import { NgModule } from '@angular/core';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ParametrePage } from './parametre/parametre.page'
+
+const routes: Routes = [
+  {
+    path: '',
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  },
+  {
+    path: 'parametre', component: ParametrePage,
+  }
+
+];
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+  ],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {}
+</file>
+
+<file path="src/app/app.component.html">
+<ion-app>
+  <ion-router-outlet></ion-router-outlet>
+</ion-app>
+</file>
+
+<file path="src/app/app.component.scss">
+
+</file>
+
+<file path="src/app/app.component.spec.ts">
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { TestBed } from '@angular/core/testing';
+
+import { AppComponent } from './app.component';
+
+describe('AppComponent', () => {
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [AppComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    }).compileComponents();
+  });
+
+  it('should create the app', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app).toBeTruthy();
+  });
+
+});
+</file>
+
+<file path="src/app/app.component.ts">
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.scss'],
+  standalone: false,
+})
+export class AppComponent {
+  constructor() {}
+}
+</file>
+
+<file path="src/app/app.module.ts">
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouteReuseStrategy } from '@angular/router';
+
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+</file>
+
+<file path="src/app/components/header/header.component.html">
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      EpisodeTrack
+    </ion-title>
+    <ion-button routerLink="/parametre" tab="parametre" slot="end">
+      <ion-icon name="settings-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+</file>
+
+<file path="src/app/components/header/header.component.scss">
+ion-title {
+  text-align: center;
+}
+</file>
+
+<file path="src/app/components/header/header.component.spec.ts">
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
+
+import { HeaderComponent } from './header.component';
+
+describe('HeaderComponent', () => {
+  let component: HeaderComponent;
+  let fixture: ComponentFixture<HeaderComponent>;
+
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [ HeaderComponent ],
+      imports: [IonicModule.forRoot()]
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(HeaderComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  }));
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+</file>
+
+<file path="src/app/components/header/header.component.ts">
+import { Component, OnInit } from '@angular/core';
+import {IonicModule} from "@ionic/angular";
+
+@Component({
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.scss'],
+    standalone: false,
+
+})
+export class HeaderComponent {
+
+  constructor() { }
+
+
+
+}
+</file>
+
+<file path="src/app/components/slider-series-films/slider-series-films.component.html">
+<h2>{{ titre }} :</h2>
+<div class="scroll-horizontal">
+  @for (serie of listeSerieFilm; track serie) {
+    <div class="carte-serie">
+      <img src="https://imgs.search.brave.com/NEdul52ZkyXeXC8qcmSIpxYS7KIev3qgysR_Tbp7yTY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2NmL2Zm/L2FiL2NmZmZhYmVk/MGZkNWM5NWI4Mzcx/NDg4ZThlNWIyZTI3/LmpwZw" alt="oaui">
+    </div>
+  } @empty {
+    <h2>Rajoutez des {{ titre }} </h2>
+  }
+</div>
+</file>
+
+<file path="src/app/components/slider-series-films/slider-series-films.component.scss">
+.scroll-horizontal {
+  display: flex;
+  overflow-x: scroll;
+  gap: 12px;
+  scroll-snap-type: x mandatory;
+}
+
+.scroll-horizontal::-webkit-scrollbar {
+  display: none;
+}
+
+.carte-serie {
+  flex: 0 0 auto; /* Empêche la carte de se rétrécir */
+  width: 50%; /* Largeur de l'affiche */
+
+  /* Point d'aimantation du slider (au début de la carte) */
+  scroll-snap-align: start;
+
+  border-radius: 8px;
+  overflow: hidden;
+}
+</file>
+
+<file path="src/app/components/slider-series-films/slider-series-films.component.spec.ts">
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
+
+import { SliderSeriesFilmsComponent } from './slider-series-films.component';
+
+describe('SliderSeriesFilmsComponent', () => {
+  let component: SliderSeriesFilmsComponent;
+  let fixture: ComponentFixture<SliderSeriesFilmsComponent>;
+
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [ SliderSeriesFilmsComponent ],
+      imports: [IonicModule.forRoot()]
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(SliderSeriesFilmsComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  }));
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+</file>
+
+<file path="src/app/components/slider-series-films/slider-series-films.component.ts">
+import {Component, Input} from '@angular/core';
+
+@Component({
+  selector: 'app-slider-series-films',
+  templateUrl: './slider-series-films.component.html',
+  styleUrls: ['./slider-series-films.component.scss'],
+  standalone: false,
+})
+export class SliderSeriesFilmsComponent {
+
+  @Input() titre: string = "Séries";
+  @Input() listeSerieFilm: any[] = [];
+
+  constructor() {}
+
+}
+</file>
+
+<file path="src/app/components/stats/stats.component.html">
+<div class="scroll-horizontal">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Statistique</ion-card-title>
+      <ion-card-subtitle>Nombre de Series/Films Vue : {{ getLenDataSeries() }}</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Statistique</ion-card-title>
+      <ion-card-subtitle>Nombre de Series/Films Vue : {{ getLenDataSeries() }}</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Statistique</ion-card-title>
+      <ion-card-subtitle>Nombre de Series/Films Vue : {{ getLenDataSeries() }}</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+</div>
+</file>
+
+<file path="src/app/components/stats/stats.component.scss">
+.scroll-horizontal {
+  display: flex;
+  overflow-x: scroll;
+  gap: 12px;
+  scroll-snap-type: x mandatory;
+}
+
+.scroll-horizontal::-webkit-scrollbar {
+  display: none;
+}
+
+ion-card {
+  flex: 0 0 auto; /* Empêche la carte de se rétrécir */
+  width: 50%; /* Largeur de l'affiche */
+
+  /* Point d'aimantation du slider (au début de la carte) */
+  scroll-snap-align: start;
+
+  border-radius: 8px;
+  overflow: hidden;
+
+  background: linear-gradient(blue, green, blue);
+}
+</file>
+
+<file path="src/app/components/stats/stats.component.spec.ts">
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
+
+import { StatsComponent } from './stats.component';
+
+describe('StatsComponent', () => {
+  let component: StatsComponent;
+  let fixture: ComponentFixture<StatsComponent>;
+
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [ StatsComponent ],
+      imports: [IonicModule.forRoot()]
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(StatsComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  }));
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+</file>
+
+<file path="src/app/components/stats/stats.component.ts">
+import {Component, inject, Input, OnInit} from '@angular/core';
+import {IonicModule} from "@ionic/angular";
+import {DataSerieModel} from "../../models/data-serie.model";
+import {DataService} from "../../Services/data.service";
+
+@Component({
+    selector: 'app-stats',
+    templateUrl: './stats.component.html',
+    styleUrls: ['./stats.component.scss'],
+    standalone: false,
+})
+export class StatsComponent  implements OnInit {
+  private data = inject(DataService);
+  nbSerieFilms! : number;
+
+  constructor() { }
+
+  ngOnInit(): void {
+    this.nbSerieFilms = this.getLenDataSeries();
+  }
+
+  public getLenDataSeries(): number{
+    return this.data.getLenDataSeries();
+  }
+
+  protected readonly DataSerieModel = DataSerieModel;
+}
+</file>
+
+<file path="src/app/explore-container/explore-container.component.html">
+<div id="container">
+  <strong>{{ name }}</strong>
+  <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+</div>
+</file>
+
+<file path="src/app/explore-container/explore-container.component.scss">
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+</file>
+
+<file path="src/app/explore-container/explore-container.component.spec.ts">
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
+
+import { ExploreContainerComponent } from './explore-container.component';
+
+describe('ExploreContainerComponent', () => {
+  let component: ExploreContainerComponent;
+  let fixture: ComponentFixture<ExploreContainerComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ExploreContainerComponent],
+      imports: [IonicModule.forRoot()]
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(ExploreContainerComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+</file>
+
+<file path="src/app/explore-container/explore-container.component.ts">
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-explore-container',
+  templateUrl: './explore-container.component.html',
+  styleUrls: ['./explore-container.component.scss'],
+  standalone: false,
+})
+export class ExploreContainerComponent {
+
+  @Input() name?: string;
+
+}
+</file>
+
+<file path="src/app/explore-container/explore-container.module.ts">
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+import { IonicModule } from '@ionic/angular';
+
+import { ExploreContainerComponent } from './explore-container.component';
+
+@NgModule({
+  imports: [ CommonModule, FormsModule, IonicModule],
+  declarations: [ExploreContainerComponent],
+  exports: [ExploreContainerComponent]
+})
+export class ExploreContainerComponentModule {}
+</file>
+
+<file path="src/app/explorer/eplorer.page.html">
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      explorer
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">explorer</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+</ion-content>
+</file>
+
+<file path="src/app/explorer/explorer-routing.module.ts">
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { ExplorerPage } from './explorer.page';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: ExplorerPage,
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class ExplorerPageRoutingModule {}
+</file>
+
+<file path="src/app/explorer/explorer.module.ts">
+import { IonicModule } from '@ionic/angular';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { ExplorerPage } from './explorer.page';
+import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
+import {ExplorerPageRoutingModule} from "./explorer-routing.module";
+
+
+@NgModule({
+  imports: [
+    IonicModule,
+    CommonModule,
+    FormsModule,
+    ExploreContainerComponentModule,
+    ExplorerPageRoutingModule
+  ],
+  declarations: [ExplorerPage]
+})
+export class ExplorerPageModule {}
+</file>
+
+<file path="src/app/explorer/explorer.page.scss">
+
+</file>
+
+<file path="src/app/explorer/explorer.page.spec.ts">
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
+
+import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
+
+import { ExplorerPage } from './explorer.page';
+
+describe('explorerPage', () => {
+  let component: ExplorerPage;
+  let fixture: ComponentFixture<ExplorerPage>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ExplorerPage],
+      imports: [IonicModule.forRoot(), ExploreContainerComponentModule]
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(ExplorerPage);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+</file>
+
+<file path="src/app/explorer/explorer.page.ts">
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-explorer-page',
+  templateUrl: 'explorer.page.scss',
+  styleUrls: ['explorer.page.scss'],
+  standalone: false,
+})
+export class ExplorerPage {
+
+  constructor() {}
+
+}
+</file>
+
+<file path="src/app/Films/Films-routing.module.ts">
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { FilmsPage } from './Films.page';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: FilmsPage,
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class FilmsPageRoutingModule {}
+</file>
+
+<file path="src/app/Films/Films.module.ts">
+import { IonicModule } from '@ionic/angular';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { FilmsPage } from './Films.page';
+import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
+
+import { FilmsPageRoutingModule } from './Films-routing.module';
+import {StatsComponent} from "../components/stats/stats.component";
+import {SliderSeriesFilmsComponent} from "../components/slider-series-films/slider-series-films.component";
+import {HeaderComponent} from "../components/header/header.component";
+
+@NgModule({
+  imports: [
+    IonicModule,
+    CommonModule,
+    FormsModule,
+    ExploreContainerComponentModule,
+    FilmsPageRoutingModule,
+    StatsComponent,
+    SliderSeriesFilmsComponent,
+    HeaderComponent
+  ],
+  declarations: [FilmsPage]
+})
+export class FilmsPageModule {}
+</file>
+
+<file path="src/app/Films/Films.page.html">
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Films</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+  <app-stats></app-stats>
+  <app-slider-series-films titre="Films en cours"></app-slider-series-films>
+  <app-slider-series-films titre="Vos Films"></app-slider-series-films>
+</ion-content>
+</file>
+
+<file path="src/app/Films/Films.page.scss">
+
+</file>
+
+<file path="src/app/Films/Films.page.spec.ts">
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
+
+import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
+
+import { FilmsPage } from './Films.page';
+
+describe('FilmsPage', () => {
+  let component: FilmsPage;
+  let fixture: ComponentFixture<FilmsPage>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [FilmsPage],
+      imports: [IonicModule.forRoot(), ExploreContainerComponentModule]
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(FilmsPage);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+</file>
+
+<file path="src/app/Films/Films.page.ts">
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-films-page',
+  templateUrl: 'Films.page.html',
+  styleUrls: ['Films.page.scss'],
+  standalone: false,
+})
+export class FilmsPage {
+
+  constructor() {}
+
+}
+</file>
+
+<file path="src/app/Home/Home-routing.module.ts">
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { HomePage } from './Home.page';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: HomePage,
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class HomePageRoutingModule {}
+</file>
+
+<file path="src/app/Home/Home.module.ts">
+import { IonicModule } from '@ionic/angular';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { HomePage } from './Home.page';
+import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
+import {HomePageRoutingModule} from "./Home-routing.module";
+import {SliderSeriesFilmsComponent} from "../components/slider-series-films/slider-series-films.component";
+import {StatsComponent} from "../components/stats/stats.component";
+import {HeaderComponent} from "../components/header/header.component";
+
+@NgModule({
+  imports: [
+    IonicModule,
+    CommonModule,
+    FormsModule,
+    ExploreContainerComponentModule,
+    HomePageRoutingModule,
+    SliderSeriesFilmsComponent,
+    StatsComponent,
+    HeaderComponent
+  ],
+  exports: [
+    HeaderComponent,
+    SliderSeriesFilmsComponent,
+    StatsComponent
+  ],
+  declarations: [HomePage, SliderSeriesFilmsComponent, StatsComponent, HeaderComponent]
+})
+export class HomePageModule {}
+</file>
+
+<file path="src/app/Home/Home.page.html">
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Series</ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-content class="ion-padding">
+  <app-stats></app-stats>
+  <app-slider-series-films></app-slider-series-films>
+  <app-slider-series-films titre="Films"></app-slider-series-films>
+</ion-content>
+</file>
+
+<file path="src/app/Home/Home.page.scss">
+
+</file>
+
+<file path="src/app/Home/Home.page.spec.ts">
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
+
+import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
+
+import { HomePage } from './Home.page';
+
+describe('HomePage', () => {
+  let component: HomePage;
+  let fixture: ComponentFixture<HomePage>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [HomePage],
+      imports: [IonicModule.forRoot(), ExploreContainerComponentModule]
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(HomePage);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+</file>
+
+<file path="src/app/Home/Home.page.ts">
+import {Component, inject} from '@angular/core';
+import {DataService} from "../Services/data.service";
+import {DataSerieModel} from "../models/data-serie.model";
+
+@Component({
+  selector: 'app-home',
+  templateUrl: 'Home.page.html',
+  styleUrls: ['Home.page.scss'],
+  standalone: false,
+})
+export class HomePage {
+
+  private data = inject(DataService);
+  constructor() {}
+
+  getSerie(): DataSerieModel[] {
+    return this.data.getDataSeries();
+  }
+}
+</file>
+
+<file path="src/app/models/data-serie.model.ts">
+export class DataSerieModel {
+  id: number;
+  name: string;
+  imageUrl: string;
+  description: string;
+  nbSeasons: number;
+  nbEpisodes: number;
+  seasonToSee: number;
+  episodeToSee: number;
+  episodeToBeSeen: number;
+  episodeToSeeTitle: string;
+  episodeToBeSeenTitle: string;
+  note: number;
+  lastDate: Date;
+
+
+  constructor(
+    id: number,
+    name: string,
+    imageUrl: string,
+    description: string,
+    nbSeasons: number,
+    nbEpisodes: number,
+    seasonToSee: number,
+    episodeToSee: number,
+    episodeToBeSeen: number,
+    episodeToSeeTitle: string,
+    episodeToBeSeenTitle: string,
+    note: number,
+    lastDate: Date = new Date()
+  ) {
+    this.id = id;
+    this.name = name;
+    this.imageUrl = imageUrl;
+    this.description = description;
+    this.nbSeasons = nbSeasons;
+    this.nbEpisodes = nbEpisodes;
+    this.seasonToSee = seasonToSee;
+    this.episodeToSee = episodeToSee;
+    this.episodeToBeSeen = episodeToBeSeen;
+    this.episodeToSeeTitle = episodeToSeeTitle;
+    this.episodeToBeSeenTitle = episodeToBeSeenTitle;
+    this.note = note;
+    this.lastDate = lastDate;
+  }
+
+}
+</file>
+
+<file path="src/app/parametre/parametre-routing.module.ts">
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+
+import { ParametrePage } from './parametre.page';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: ParametrePage
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
+})
+export class ParametrePageRoutingModule {}
+</file>
+
+<file path="src/app/parametre/parametre.module.ts">
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+import { ParametrePageRoutingModule } from './parametre-routing.module';
+import { ParametrePage } from './parametre.page';
+import {HomePageModule} from "../Home/Home.module";
+
+@NgModule({
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    ParametrePageRoutingModule,
+    HomePageModule,
+  ],
+  declarations: [ParametrePage]
+})
+export class ParametrePageModule {}
+</file>
+
+<file path="src/app/parametre/parametre.page.html">
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">parametre</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Paramètre</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-icon slot="start" name="moon-outline"></ion-icon>
+      <ion-toggle>Mode sombre : </ion-toggle>
+    </ion-item>
+  </ion-list>
+</ion-content>
+</file>
+
+<file path="src/app/parametre/parametre.page.scss">
+
+</file>
+
+<file path="src/app/parametre/parametre.page.spec.ts">
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ParametrePage } from './parametre.page';
+
+describe('ParametrePage', () => {
+  let component: ParametrePage;
+  let fixture: ComponentFixture<ParametrePage>;
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(ParametrePage);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+</file>
+
+<file path="src/app/parametre/parametre.page.ts">
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-parametre',
+  templateUrl: './parametre.page.html',
+  styleUrls: ['./parametre.page.scss'],
+  standalone: false,
+})
+export class ParametrePage  {
+
+  constructor() { }
+
+
+
+}
+</file>
+
+<file path="src/app/Series/Series-routing.module.ts">
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { SeriesPage } from './Series.page';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: SeriesPage,
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class SeriesPageRoutingModule {}
+</file>
+
+<file path="src/app/Series/Series.module.ts">
+import { IonicModule } from '@ionic/angular';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
+import { SeriesPageRoutingModule } from './Series-routing.module';
+import { SeriesPage } from "./Series.page";
+import { SerieVueComponentModule } from "./SerieVue/SerieVue.module";
+import {SliderSeriesFilmsComponent} from "../components/slider-series-films/slider-series-films.component";
+import {StatsComponent} from "../components/stats/stats.component";
+import {HeaderComponent} from "../components/header/header.component";
+import {HomePageModule} from "../Home/Home.module";
+
+@NgModule({
+  imports: [
+    IonicModule,
+    CommonModule,
+    FormsModule,
+    ExploreContainerComponentModule,
+    SeriesPageRoutingModule,
+    SerieVueComponentModule,
+    SliderSeriesFilmsComponent,
+    StatsComponent,
+    HeaderComponent,
+    HomePageModule,
+  ],
+  declarations: [SeriesPage]
+})
+export class SeriesPageModule {}
+</file>
+
+<file path="src/app/Series/Series.page.html">
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Series</ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-content class="ion-padding">
+  <app-stats></app-stats>
+  <app-slider-series-films></app-slider-series-films>
+  <app-slider-series-films titre="Vos series"></app-slider-series-films>
+
+</ion-content>
+</ion-content>
+</file>
+
+<file path="src/app/Series/Series.page.scss">
+/* Le conteneur qui permet le défilement */
+.scroll-horizontal {
+  display: flex;
+  overflow-x: auto; /* Active le scroll horizontal */
+  gap: 12px; /* Espace entre les affiches */
+  padding-bottom: 10px; /* Espace en bas */
+
+  /* L'effet "slider" qui aimante les cartes */
+  scroll-snap-type: x mandatory;
+}
+
+/* Cache la barre de défilement sur Chrome/Safari/Edge */
+.scroll-horizontal::-webkit-scrollbar {
+  display: none;
+}
+
+/* Vos affiches */
+.carte-serie {
+  flex: 0 0 auto; /* Empêche la carte de se rétrécir */
+  width: 130px; /* Largeur de l'affiche */
+
+  /* Point d'aimantation du slider (au début de la carte) */
+  scroll-snap-align: start;
+
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.carte-serie img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+</file>
+
+<file path="src/app/Series/Series.page.spec.ts">
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
+
+import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
+
+import {SeriesPage} from "./Series.page";
+
+describe('Series', () => {
+  let component: SeriesPage;
+  let fixture: ComponentFixture<SeriesPage>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [SeriesPage],
+      imports: [IonicModule.forRoot(), ExploreContainerComponentModule]
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(SeriesPage);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+</file>
+
+<file path="src/app/Series/Series.page.ts">
+import {Component, inject} from '@angular/core';
+import {DataService} from "../Services/data.service";
+import {DataSerieModel} from "../models/data-serie.model";
+
+@Component({
+  selector: 'app-series-page',
+  templateUrl: 'Series.page.html',
+  styleUrls: ['Series.page.scss'],
+  standalone: false,
+})
+export class SeriesPage {
+  private data = inject(DataService);
+  constructor() {}
+
+  getSerie(): DataSerieModel[] {
+    return this.data.getDataSeries();
+  }
+
+}
+</file>
+
+<file path="src/app/Series/SerieVue/SerieVue.component.html">
+@if (Serie) {
+  <ion-item [routerLink]="'/details/' + Serie.id" [detail]="false">
+    <div slot="start" [class]="Serie.episodeToBeSeen > 0 ? 'dot dot-unread' : 'dot'"></div>
+
+    <ion-thumbnail slot="start" style="margin-right: 15px; border-radius: 8px; overflow: hidden;">
+      <img [alt]="Serie.name" [src]="Serie.imageUrl" />
+    </ion-thumbnail>
+
+    <ion-label class="ion-text-wrap">
+      <h2>
+        {{ Serie.name }}
+        <span class="date">
+          <ion-note color="warning" style="display: flex; align-items: center; gap: 4px;">
+            ★ {{ Serie.note }}
+          </ion-note>
+          @if (isIos()) {
+            <ion-icon aria-hidden="true" name="chevron-forward" size="small"></ion-icon>
+          }
+        </span>
+      </h2>
+
+      <h3>
+        @if (Serie.seasonToSee > 0) {
+          S{{ Serie.seasonToSee }}E{{ Serie.episodeToSee }}
+          @if (Serie.episodeToSeeTitle) { - {{ Serie.episodeToSeeTitle }} }
+        } @else {
+          Série terminée ou à jour
+        }
+      </h3>
+
+      <p>
+        {{ Serie.description }}
+      </p>
+    </ion-label>
+  </ion-item>
+}
+</file>
+
+<file path="src/app/Series/SerieVue/SerieVue.component.scss">
+ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+}
+
+ion-label {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+ion-item h2 {
+  font-weight: 600;
+  margin: 0;
+  
+  /**
+   * With larger font scales
+   * the date/time should wrap to the next
+   * line. However, there should be
+   * space between the name and the date/time
+   * if they can appear on the same line.
+   */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+ion-item p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 95%;
+}
+
+ion-item .date {
+  align-items: center;
+  display: flex;
+}
+
+ion-item ion-icon {
+  color: #c9c9ca;
+}
+
+ion-item ion-note {
+  font-size: 0.9375rem;
+  margin-right: 8px;
+  font-weight: normal;
+}
+
+ion-item ion-note.md {
+  margin-right: 14px;
+}
+
+.dot {
+  display: block;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  align-self: start;
+  margin: 16px 10px 16px 16px;
+}
+
+.dot-unread {
+  background: var(--ion-color-primary);
+}
+
+ion-footer ion-title {
+  font-size: 11px;
+  font-weight: normal;
+}
+</file>
+
+<file path="src/app/Series/SerieVue/SerieVue.component.spec.ts">
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterModule } from '@angular/router';
+import { IonicModule } from '@ionic/angular';
+
+import { SerieVueComponent } from './SerieVue.component';
+
+describe('SerieVueComponent', () => {
+  let component: SerieVueComponent;
+  let fixture: ComponentFixture<SerieVueComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [SerieVueComponent],
+      imports: [IonicModule.forRoot(), RouterModule.forRoot([])]
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(SerieVueComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+</file>
+
+<file path="src/app/Series/SerieVue/SerieVue.component.ts">
+import { ChangeDetectionStrategy, Component, inject, Input } from '@angular/core';
+import { Platform } from '@ionic/angular';
+import { DataSerieModel } from '../../models/data-serie.model';
+
+@Component({
+  selector: 'app-vue-serie',
+  templateUrl: './SerieVue.component.html',
+  styleUrls: ['./SerieVue.component.scss'],
+  standalone: false,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class SerieVueComponent {
+  private platform = inject(Platform);
+  @Input() Serie?: DataSerieModel;
+  isIos() {
+    return this.platform.is('ios')
+  }
+}
+</file>
+
+<file path="src/app/Series/SerieVue/SerieVue.module.ts">
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+
+import { IonicModule } from '@ionic/angular';
+
+import { SerieVueComponent } from './SerieVue.component';
+
+@NgModule({
+  imports: [ CommonModule, FormsModule, IonicModule, RouterModule],
+  declarations: [SerieVueComponent],
+  exports: [SerieVueComponent]
+})
+export class SerieVueComponentModule {}
+</file>
+
+<file path="src/app/Services/data.service.spec.ts">
+import { TestBed } from '@angular/core/testing';
+
+import { DataService } from './data.service';
+
+describe('DataService', () => {
+  beforeEach(() => TestBed.configureTestingModule({}));
+
+  it('should be created', () => {
+    const service: DataService = TestBed.inject(DataService);
+    expect(service).toBeTruthy();
+  });
+});
+</file>
+
+<file path="src/app/Services/data.service.ts">
+import { Injectable } from '@angular/core';
+import {DataSerieModel} from "../models/data-serie.model";
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class DataService {
+  public dataSeries: DataSerieModel[] = [
+    {
+      id: 0,
+      name: "Dune: Prophecy",
+      imageUrl: "assets/images/dune_prophecy.webp",
+      description: "Dans un futur où l'humanité a voyagé à travers la galaxie des milles planètes, une mystérieuse sororité appelée Bene Gesserit navigue entre les batailles politiques et les imbroglios de l'Imperium, poursuivant un but bien précis et bien à lui qui va amener ses membres jusqu'à l'énigmatique planète de Dune…",
+      nbSeasons: 1,
+      nbEpisodes: 4,
+      seasonToSee: 1,
+      episodeToSee: 4,
+      episodeToBeSeen: 0,
+      episodeToSeeTitle: "Twice Born",
+      episodeToBeSeenTitle: "",
+      note: 4.7,
+      lastDate: new Date(),
+    },
+    {
+      id: 1,
+      name: "Slow Horses",
+      imageUrl: "assets/images/slow_horses.jpg",
+      description: "Cette fiction d'espionnage ingénieuse suit une équipe dysfonctionnelle d'agents du MI5 - et leur odieux patron, le célèbre Jackson Lamb - qui naviguent dans le monde trouble de l'espionnage pour défendre l'Angleterre contre des forces malfaisantes.",
+      nbSeasons: 4,
+      nbEpisodes: 24,
+      seasonToSee: 2,
+      episodeToSee: 1,
+      episodeToBeSeen: 17,
+      episodeToSeeTitle: "Last Stop",
+      episodeToBeSeenTitle: "From Upshott With Love",
+      note: 4.9,
+      lastDate: new Date(),
+    },
+    {
+      id: 2,
+      name: "Tokyo Vice",
+      imageUrl: "assets/images/tokyo_vice.webp",
+      description: "À Tokyo, un reporter américain employé par un journal japonais se met en danger en étant à la fois un interlocuteur des yakuzas et un informateur de la police.",
+      nbSeasons: 2,
+      nbEpisodes: 18,
+      seasonToSee: 1,
+      episodeToSee: 1,
+      episodeToBeSeen: 17,
+      episodeToSeeTitle: "The Test",
+      episodeToBeSeenTitle: "Kishi Kaisei",
+      note: 4.9,
+      lastDate: new Date(),
+    },
+    {
+      id: 3,
+      name: "Silo",
+      imageUrl: "assets/images/silo.jpeg",
+      description: "Dans un monde futur dévasté et toxique, des milliers de survivants habitent un gigantesque silo souterrain. Après la transgression d'une règle d'or par leur shérif et la mort mystérieuse de plusieurs résidents, Juliette, une mécanicienne, perce peu à peu les terribles secrets du Silo.",
+      nbSeasons: 2,
+      nbEpisodes: 15,
+      seasonToSee: 2,
+      episodeToSee: 15,
+      episodeToBeSeen: 0,
+      episodeToSeeTitle: "descent",
+      episodeToBeSeenTitle: "",
+      note: 4.9,
+      lastDate: new Date(),
+    },
+    {
+      id: 4,
+      name: "Reacher",
+      imageUrl: "assets/images/reacher.jpg",
+      description: "Quand Jack Reacher, ancien officier de la police militaire, est accusé à tort de meurtre, il se retrouve au milieu d'une conspiration où nagent flics corrompus, hommes d'affaires louches et politiciens sournois. Grâce à son intelligence, il doit découvrir ce que cache la ville de Margrave, en Géorgie. La première saison de Reacher est basée sur le best-seller de Lee Child, \"Du fond de l'abîme\".",
+      nbSeasons: 2,
+      nbEpisodes: 16,
+      seasonToSee: 3,
+      episodeToSee: 1,
+      episodeToBeSeen: 0,
+      episodeToSeeTitle: "TBA",
+      episodeToBeSeenTitle: "",
+      note: 4.8,
+      lastDate: new Date(),
+    },
+    {
+      id: 5,
+      name: "Andor",
+      imageUrl: "assets/images/andor.jpg",
+      description: "En cette ère dangereuse, Cassian Andor emprunte un chemin qui fera de lui un héros de la rébellion.",
+      nbSeasons: 1,
+      nbEpisodes: 12,
+      seasonToSee: 2,
+      episodeToSee: 1,
+      episodeToBeSeen: 0,
+      episodeToSeeTitle: "TBA",
+      episodeToBeSeenTitle: "",
+      note: 4.8,
+      lastDate: new Date(),
+    },
+    {
+      id: 6,
+      name: "The Gentlemen",
+      imageUrl: "assets/images/gentlement.jpg",
+      description: "Quand Eddie, un aristocrate, hérite du domaine familial, il y découvre un énorme empire de la beuh... Et les exploitants n'ont aucune intention de l'abandonner !",
+      nbSeasons: 1,
+      nbEpisodes: 8,
+      seasonToSee: 2,
+      episodeToSee: 1,
+      episodeToBeSeen: 0,
+      episodeToSeeTitle: "TBA",
+      episodeToBeSeenTitle: "",
+      note: 4.9,
+      lastDate: new Date(),
+    },
+    {
+      id: 7,
+      name: "Shogun",
+      imageUrl: "assets/images/shogun.jpg",
+      description: "En l'an 1600 au Japon, le seigneur Yoshii Toranaga lutte pour sa survie alors que ses ennemis du Conseil des régents se liguent contre lui, lorsqu'un mystérieux navire européen est retrouvé échoué dans un village de pêcheurs voisin.",
+      nbSeasons: 1,
+      nbEpisodes: 10,
+      seasonToSee: 0,
+      episodeToSee: 0,
+      episodeToBeSeen: 0,
+      episodeToSeeTitle: "",
+      episodeToBeSeenTitle: "",
+      note: 4.9,
+      lastDate: new Date(),
+    }
+  ];
+
+  constructor() { }
+
+  public getLenDataSeries(): number{
+    return this.dataSeries.length;
+  }
+  public getDataSeries(): DataSerieModel[] {
+    return this.dataSeries;
+  }
+
+  public getDataSerieById(id: number): DataSerieModel {
+    return this.dataSeries[id];
+  }
+
+}
+</file>
+
+<file path="src/app/tabs/tabs-routing.module.ts">
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { TabsPage } from './tabs.page';
+
+
+const routes: Routes = [
+  {
+    path: 'tabs',
+    component: TabsPage,
+    children: [
+      {
+        path: 'Films',
+        loadChildren: () => import('../Films/Films.module').then(m => m.FilmsPageModule)
+      },
+      {
+        path: 'explorer',
+        loadChildren: () => import('../explorer/explorer.module').then(m => m.ExplorerPageModule)
+      },
+      {
+        path: 'Home',
+        loadChildren: () => import('../Home/Home.module').then(m => m.HomePageModule)
+      },
+      {
+        path: 'Series',
+        loadChildren: () => import('../Series/Series.module').then(m => m.SeriesPageModule)
+      },
+      {
+        path: '',
+        redirectTo: '/tabs/explorer',
+        pathMatch: 'full'
+      }
+    ]
+  },
+  {
+    path: '',
+    redirectTo: '/tabs/Films',
+    pathMatch: 'full'
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+})
+export class TabsPageRoutingModule {}
+</file>
+
+<file path="src/app/tabs/tabs.module.ts">
+import { IonicModule } from '@ionic/angular';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+import { TabsPageRoutingModule } from './tabs-routing.module';
+
+import { TabsPage } from './tabs.page';
+
+@NgModule({
+  imports: [
+    IonicModule,
+    CommonModule,
+    FormsModule,
+    TabsPageRoutingModule
+  ],
+  declarations: [TabsPage]
+})
+export class TabsPageModule {}
+</file>
+
+<file path="src/app/tabs/tabs.page.html">
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="Home" href="/tabs/Home">
+      <ion-icon aria-hidden="true" name="home-outline"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="Series" href="/tabs/Series">
+      <ion-icon aria-hidden="true" name="tv-outline"></ion-icon>
+      <ion-label>Series</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="Films" href="/tabs/Films">
+      <ion-icon aria-hidden="true" name="film-outline"></ion-icon>
+      <ion-label>Film</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="explorer" href="/tabs/explorer">
+      <ion-icon aria-hidden="true" name="search-outline"></ion-icon>
+      <ion-label>Explorer</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+
+</ion-tabs>
+</file>
+
+<file path="src/app/tabs/tabs.page.scss">
+
+</file>
+
+<file path="src/app/tabs/tabs.page.spec.ts">
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { TabsPage } from './tabs.page';
+
+describe('TabsPage', () => {
+  let component: TabsPage;
+  let fixture: ComponentFixture<TabsPage>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [TabsPage],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    }).compileComponents();
+  });
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(TabsPage);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+</file>
+
+<file path="src/app/tabs/tabs.page.ts">
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-tabs',
+  templateUrl: 'tabs.page.html',
+  styleUrls: ['tabs.page.scss'],
+  standalone: false,
+})
+export class TabsPage {
+
+  constructor() {}
+
+}
+</file>
+
+<file path="src/assets/shapes.svg">
+<svg width="350" height="140" xmlns="http://www.w3.org/2000/svg" style="background:#f6f7f9"><g fill="none" fill-rule="evenodd"><path fill="#F04141" style="mix-blend-mode:multiply" d="M61.905-34.23l96.194 54.51-66.982 54.512L22 34.887z"/><circle fill="#10DC60" style="mix-blend-mode:multiply" cx="155.5" cy="135.5" r="57.5"/><path fill="#3880FF" style="mix-blend-mode:multiply" d="M208.538 9.513l84.417 15.392L223.93 93.93z"/><path fill="#FFCE00" style="mix-blend-mode:multiply" d="M268.625 106.557l46.332-26.75 46.332 26.75v53.5l-46.332 26.75-46.332-26.75z"/><circle fill="#7044FF" style="mix-blend-mode:multiply" cx="299.5" cy="9.5" r="38.5"/><rect fill="#11D3EA" style="mix-blend-mode:multiply" transform="rotate(-60 148.47 37.886)" x="143.372" y="-7.056" width="10.196" height="89.884" rx="5.098"/><path d="M-25.389 74.253l84.86 8.107c5.498.525 9.53 5.407 9.004 10.905a10 10 0 0 1-.057.477l-12.36 85.671a10.002 10.002 0 0 1-11.634 8.42l-86.351-15.226c-5.44-.959-9.07-6.145-8.112-11.584l13.851-78.551a10 10 0 0 1 10.799-8.219z" fill="#7044FF" style="mix-blend-mode:multiply"/><circle fill="#0CD1E8" style="mix-blend-mode:multiply" cx="273.5" cy="106.5" r="20.5"/></g></svg>
+</file>
+
+<file path="src/environments/environment.prod.ts">
+export const environment = {
+  production: true
+};
+</file>
+
+<file path="src/environments/environment.ts">
+// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
+
+export const environment = {
+  production: false
+};
+
+/*
+ * For easier debugging in development mode, you can import the following file
+ * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+ *
+ * This import should be commented out in production mode because it will have a negative impact
+ * on performance if an error is thrown.
+ */
+// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+</file>
+
+<file path="src/global.scss">
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+@import "@ionic/angular/css/palettes/dark.system.css";
+</file>
+
+<file path="src/index.html">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Ionic App</title>
+
+  <base href="/" />
+
+  <meta name="color-scheme" content="light dark" />
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+
+  <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
+
+  <!-- add to homescreen for ios -->
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+</head>
+
+<body>
+  <app-root></app-root>
+</body>
+
+</html>
+</file>
+
+<file path="src/main.ts">
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from './app/app.module';
+
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.log(err));
+</file>
+
+<file path="src/polyfills.ts">
+/**
+ * This file includes polyfills needed by Angular and is loaded before the app.
+ * You can add your own extra polyfills to this file.
+ *
+ * This file is divided into 2 sections:
+ *   1. Browser polyfills. These are applied before loading ZoneJS and are sorted by browsers.
+ *   2. Application imports. Files imported after ZoneJS that should be loaded before your main
+ *      file.
+ *
+ * The current setup is for so-called "evergreen" browsers; the last versions of browsers that
+ * automatically update themselves. This includes recent versions of Safari, Chrome (including
+ * Opera), Edge on the desktop, and iOS and Chrome on mobile.
+ *
+ * Learn more in https://angular.io/guide/browser-support
+ */
+
+/***************************************************************************************************
+ * BROWSER POLYFILLS
+ */
+
+/**
+ * By default, zone.js will patch all possible macroTask and DomEvents
+ * user can disable parts of macroTask/DomEvents patch by setting following flags
+ * because those flags need to be set before `zone.js` being loaded, and webpack
+ * will put import in the top of bundle, so user need to create a separate file
+ * in this directory (for example: zone-flags.ts), and put the following flags
+ * into that file, and then add the following code before importing zone.js.
+ * import './zone-flags';
+ *
+ * The flags allowed in zone-flags.ts are listed here.
+ *
+ * The following flags will work for all browsers.
+ *
+ * (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch requestAnimationFrame
+ * (window as any).__Zone_disable_on_property = true; // disable patch onProperty such as onclick
+ * (window as any).__zone_symbol__UNPATCHED_EVENTS = ['scroll', 'mousemove']; // disable patch specified eventNames
+ *
+ *  in IE/Edge developer tools, the addEventListener will also be wrapped by zone.js
+ *  with the following flag, it will bypass `zone.js` patch for IE/Edge
+ *
+ *  (window as any).__Zone_enable_cross_context_check = true;
+ *
+ */
+ 
+import './zone-flags';
+
+/***************************************************************************************************
+ * Zone JS is required by default for Angular itself.
+ */
+import 'zone.js';  // Included with Angular CLI.
+
+
+/***************************************************************************************************
+ * APPLICATION IMPORTS
+ */
+</file>
+
+<file path="src/test.ts">
+// This file is required by karma.conf.js and loads recursively all the .spec and framework files
+
+import 'zone.js/testing';
+import { getTestBed } from '@angular/core/testing';
+import {
+  BrowserDynamicTestingModule,
+  platformBrowserDynamicTesting
+} from '@angular/platform-browser-dynamic/testing';
+
+// First, initialize the Angular testing environment.
+getTestBed().initTestEnvironment(
+  BrowserDynamicTestingModule,
+  platformBrowserDynamicTesting(),
+);
+</file>
+
+<file path="src/theme/variables.scss">
+// For information on how to create your own theme, please refer to:
+// https://ionicframework.com/docs/theming/
+</file>
+
+<file path="src/zone-flags.ts">
+/**
+ * Prevents Angular change detection from
+ * running with certain Web Component callbacks
+ */
+// eslint-disable-next-line no-underscore-dangle
+(window as any).__Zone_disable_customElements = true;
+</file>
+
+<file path="tsconfig.app.json">
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/app",
+    "types": []
+  },
+  "files": [
+    "src/main.ts",
+    "src/polyfills.ts"
+  ],
+  "include": [
+    "src/**/*.d.ts"
+  ]
+}
+</file>
+
+<file path="tsconfig.json">
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2022",
+    "module": "es2020",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "skipLibCheck": true,
+    "useDefineForClassFields": false
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}
+</file>
+
+<file path="tsconfig.spec.json">
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/spec",
+    "types": [
+      "jasmine"
+    ]
+  },
+  "files": [
+    "src/test.ts",
+    "src/polyfills.ts"
+  ],
+  "include": [
+    "src/**/*.spec.ts",
+    "src/**/*.d.ts"
+  ]
+}
+</file>
+
+</files>

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { ParametrePage } from './parametre/parametre.page'
 
 const routes: Routes = [
   {
@@ -8,7 +7,8 @@ const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
-    path: 'parametre', component: ParametrePage,
+    path: 'parametre',
+    loadChildren: () => import('./parametre/parametre.module').then(m => m.ParametrePageModule),
   }
 
 ];

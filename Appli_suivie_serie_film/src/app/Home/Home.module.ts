@@ -17,7 +17,11 @@ import {HeaderComponent} from "../components/header/header.component";
     ExploreContainerComponentModule,
     HomePageRoutingModule,
   ],
-
+  exports: [
+    HeaderComponent,
+    SliderSeriesFilmsComponent,
+    StatsComponent
+  ],
   declarations: [HomePage, SliderSeriesFilmsComponent, StatsComponent, HeaderComponent]
 })
 export class HomePageModule {}
