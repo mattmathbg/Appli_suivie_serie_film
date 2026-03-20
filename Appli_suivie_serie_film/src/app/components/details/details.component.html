@@ -1,0 +1,92 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="transparent-toolbar">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back-outline" class="header-icon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center header-title">EpisodeTrack</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="settings-outline" class="header-icon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="custom-gradient-bg">
+  <!-- On n'affiche le contenu que si les données OMDb sont chargées -->
+  <div class="page-wrapper" *ngIf="mediaDetails">
+
+    <!-- Image de couverture (gère le cas où l'image est absente dans OMDb) -->
+    <div class="cover-container">
+      <img
+        [src]="mediaDetails.Poster !== 'N/A' ? mediaDetails.Poster : 'assets/placeholder.jpg'"
+        alt="Cover"
+        class="cover-image"
+      />
+    </div>
+
+    <!-- Méta-données avec les clés OMDb -->
+    <div class="metadata-section">
+      <h2 class="main-title">{{ mediaDetails.Title }}</h2>
+      <p class="meta-text"><strong>Genres :</strong> {{ mediaDetails.Genre }}</p>
+      <!-- On affiche le réalisateur pour un film, ou l'écrivain/créateur pour une série -->
+      <p class="meta-text">
+        <strong>Auteurs :</strong> {{ mediaDetails.Type === 'movie' ? mediaDetails.Director : mediaDetails.Writer }}
+      </p>
+      <p class="meta-text"><strong>Date de sortie :</strong> {{ mediaDetails.Released }}</p>
+    </div>
+
+    <!-- VUE FILM : OMDb renvoie le type "movie" -->
+    <div *ngIf="mediaDetails.Type === 'movie'" class="film-controls">
+      <!-- La progression utilisateur (progressValue) doit être gérée en local, OMDb ne la fournit pas -->
+      <ion-range
+        mode="ios"
+        [min]="0"
+        [max]="100"
+        [(ngModel)]="userProgress"
+        class="progress-bar">
+      </ion-range>
+      <!-- On utilise le Runtime d'OMDb pour la durée totale -->
+      <div class="time-label">{{ currentWatchTime }} / {{ mediaDetails.Runtime }}</div>
+    </div>
+
+    <!-- VUE SERIE : OMDb renvoie le type "series" -->
+    <div *ngIf="mediaDetails.Type === 'series'" class="serie-controls">
+      <ion-button fill="clear" class="circle-btn">
+        <ion-icon name="remove-outline"></ion-icon>
+      </ion-button>
+
+      <div class="dropdowns">
+        <span class="dropdown-item">Saison <ion-icon name="chevron-expand-outline"></ion-icon></span>
+        <span class="dropdown-item">Épisode <ion-icon name="chevron-expand-outline"></ion-icon></span>
+      </div>
+
+      <ion-button fill="clear" class="circle-btn">
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-button>
+    </div>
+
+    <!-- Synopsis -->
+    <div class="text-section">
+      <h3>Synopsis :</h3>
+      <p class="synopsis-text">{{ mediaDetails.Plot }}</p>
+    </div>
+
+    <!-- Actualité -->
+    <div class="text-section">
+      <h3>Actualité :</h3>
+      <p class="status-text">{{ getStatus(mediaDetails.Year) }}</p>
+    </div>
+
+    <div class="action-container">
+      <ion-button class="delete-btn">
+        Supprimer {{ mediaDetails.Type === 'movie' ? 'le film' : 'la serie' }}
+      </ion-button>
+    </div>
+
+  </div>
+</ion-content>
