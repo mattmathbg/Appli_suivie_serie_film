@@ -8,6 +8,7 @@ import {HomePageRoutingModule} from "./Home-routing.module";
 import {SliderSeriesFilmsComponent} from "../components/slider-series-films/slider-series-films.component";
 import {StatsComponent} from "../components/stats/stats.component";
 import {HeaderComponent} from "../components/header/header.component";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import {HeaderComponent} from "../components/header/header.component";
     FormsModule,
     ExploreContainerComponentModule,
     HomePageRoutingModule,
+    HttpClientModule
   ],
   exports: [
     HeaderComponent,

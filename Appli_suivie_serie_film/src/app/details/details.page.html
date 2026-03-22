@@ -1,0 +1,14 @@
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+  @if (mediaDetails) {
+    <ion-img [src]="mediaDetails.Poster"></ion-img>
+
+    <div>
+      <h2>{{ mediaDetails.Title }}</h2>
+      <p>⭐ {{ mediaDetails.imdbRating }}</p>
+      <p><strong>Acteurs :</strong> {{ mediaDetails.Actors }}</p>
+      <p><strong>Synopsis :</strong> {{ mediaDetails.Plot }}</p>
+    </div>
+  }
+</ion-content>

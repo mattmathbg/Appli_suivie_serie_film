@@ -1,10 +1,33 @@
 <app-header></app-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">explorer</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <app-search></app-search>
+
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="8">
+        <ion-searchbar
+          placeholder="Chercher un film"
+          [(ngModel)]="searchQuery"
+          (keyup.enter)="lancerRecherche()">
+        </ion-searchbar>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button expand="block" (click)="lancerRecherche()">Rechercher</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  @if (contenus.length > 0) {
+    @for (film of contenus; track film.imdbID) {
+      <ion-card (click)="voirDetails(film.imdbID)">
+        <ion-img [src]="film.Poster"></ion-img>
+        <ion-card-header>
+          <ion-card-title>{{ film.Title }}</ion-card-title>
+          <ion-card-subtitle>{{ film.Year }}</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    }
+  } @else if (searchQuery.trim() !== '') {
+    <p>Aucun résultat pour "{{ searchQuery }}"</p>
+  }
 </ion-content>

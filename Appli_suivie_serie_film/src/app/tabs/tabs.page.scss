@@ -1,6 +1,6 @@
 ion-tab-bar {
   border-radius: 10px; // coins arrondis
-  border: 0.5px solid rgba(255, 255, 255, 0.2);  // ← contour léger
-  --background: rgba(0, 0, 0, 0);  //variable Ionic pour le fond pour appliquer sur les composants
+  border: 0.5px solid rgba(255, 255, 255, 0.4);  // contour
+  --background: rgba(0, 0, 0, 0.7);  //variable Ionic pour le fond pour appliquer sur les composants
 }
 

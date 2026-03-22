@@ -9,7 +9,16 @@ const routes: Routes = [
   {
     path: 'parametre',
     loadChildren: () => import('./parametre/parametre.module').then(m => m.ParametrePageModule),
+  },
+  {
+    path: 'details',
+    loadChildren: () => import('./details/details.module').then( m => m.DetailsPageModule)
+  },
+  {
+    path: 'details/:id',
+    loadChildren: () => import('./details/details.module').then(m => m.DetailsPageModule)
   }
+
 
 ];
 @NgModule({

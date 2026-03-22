@@ -7,6 +7,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 import { ExplorerPageRoutingModule } from "./explorer-routing.module";
 import { SearchComponent } from '../components/search/search.component';
 import {HomePageModule} from "../Home/Home.module";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -16,7 +17,7 @@ import {HomePageModule} from "../Home/Home.module";
     FormsModule,
     ExploreContainerComponentModule,
     ExplorerPageRoutingModule,
-    HomePageModule
+    HomePageModule,
   ],
   declarations: [ExplorerPage, SearchComponent]
 })
