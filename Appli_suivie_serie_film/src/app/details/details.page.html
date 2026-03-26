@@ -10,5 +10,9 @@
       <p><strong>Acteurs :</strong> {{ mediaDetails.Actors }}</p>
       <p><strong>Synopsis :</strong> {{ mediaDetails.Plot }}</p>
     </div>
+    <ion-button expand="block" (click)="lancerNotification()">
+      <ion-icon name="notifications-outline" slot="start"></ion-icon>
+      Me rappeler la sortie
+    </ion-button>
   }
 </ion-content>
