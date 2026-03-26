@@ -1,7 +1,7 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {OMDbService} from "../OMDB/OMDB.service";
 import {ActivatedRoute} from "@angular/router";
-
+import { Notification } from '../Services/Notification';
 
 @Component({
   selector: 'app-details',
@@ -14,6 +14,7 @@ export class DetailsPage implements OnInit{
   mediaDetails: any = null;
   private route = inject(ActivatedRoute);
   private OMDB = inject(OMDbService);
+  private NotificationService = inject(Notification);
   constructor() { }
 
   ngOnInit() {
@@ -23,6 +24,13 @@ export class DetailsPage implements OnInit{
         this.mediaDetails = res;
       });
     }
+  }
+
+  lancerNotification() {
+    const titre = "Rappel de série";
+    const message = "Le prochain épisode de votre série sort aujourd'hui !";
+    this.NotificationService.requestPermissions();
+    this.NotificationService.scheduleNotification(titre, message, 1,)
   }
 
 }
