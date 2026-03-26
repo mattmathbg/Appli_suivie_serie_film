@@ -3,12 +3,18 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Films</ion-title>
+      <ion-title size="large">Series</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
     <app-stats></app-stats>
-    <app-slider-series-films titre="Films en cours"></app-slider-series-films>
-    <app-slider-series-films titre="Vos Films"></app-slider-series-films>
+    <app-slider-series-films
+      titre="Séries en cours"
+      [listeSerieFilm]="FilmsEnCours">
+    </app-slider-series-films>
+
+    <app-slider-series-films
+      titre="Vos séries"
+      [listeSerieFilm]="toutMesFilms"> </app-slider-series-films>
   </ion-content>
 </ion-content>

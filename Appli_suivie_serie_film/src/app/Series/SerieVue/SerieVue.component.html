@@ -1,7 +1,5 @@
 @if (Serie) {
   <ion-item [routerLink]="'/details/' + Serie.id" [detail]="false">
-    <div slot="start" [class]="Serie.episodeToBeSeen > 0 ? 'dot dot-unread' : 'dot'"></div>
-
     <ion-thumbnail slot="start" style="margin-right: 15px; border-radius: 8px; overflow: hidden;">
       <img [alt]="Serie.name" [src]="Serie.imageUrl" />
     </ion-thumbnail>

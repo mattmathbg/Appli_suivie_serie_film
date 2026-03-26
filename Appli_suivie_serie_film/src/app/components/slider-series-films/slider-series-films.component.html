@@ -1,10 +1,13 @@
 <h2>{{ titre }} :</h2>
 <div class="scroll-horizontal">
-  @for (serie of listeSerieFilm; track serie) {
+  @for (item of listeSerieFilm; track item.id) {
     <div class="carte-serie">
-      <img src="https://imgs.search.brave.com/NEdul52ZkyXeXC8qcmSIpxYS7KIev3qgysR_Tbp7yTY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2NmL2Zm/L2FiL2NmZmZhYmVk/MGZkNWM5NWI4Mzcx/NDg4ZThlNWIyZTI3/LmpwZw" alt="oaui">
+      <img [src]="item.imageUrl" [alt]="item.name">
+      <p>{{ item.name }}</p>
     </div>
   } @empty {
-    <h2>Rajoutez des {{ titre }} </h2>
+    <div class="ion-padding">
+      <p>Aucun contenu dans "{{ titre }}"</p>
+    </div>
   }
 </div>

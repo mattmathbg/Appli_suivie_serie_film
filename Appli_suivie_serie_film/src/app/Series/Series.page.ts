@@ -10,10 +10,31 @@ import {DataSerieModel} from "../models/data-serie.model";
 })
 export class SeriesPage {
   private data = inject(DataService);
+  public dataSeries: DataSerieModel[] = [];
+  public seriesEnCours: DataSerieModel[] = [];
+  public toutesMesSeries: DataSerieModel[] = [];
   constructor() {}
 
-  getSerie(): DataSerieModel[] {
-    return this.data.getDataSeries();
+  async ngOnInit() {
+    const listFilm = await this.data.getContenues();
+
+    if (listFilm ) {
+      this.dataSeries = listFilm
+        .filter(item => item.type === 'series')
+        .map(item => new DataSerieModel(item));
+    }
+  }
+
+  async ionViewWillEnter() {
+    const uniquementSeries = await this.data.getSerie();
+
+    this.toutesMesSeries = uniquementSeries;
+
+    this.seriesEnCours = uniquementSeries.filter(s => s.episodeToSee > 0);
+  }
+
+  async getSerie(): Promise<DataSerieModel[]> {
+    return await this.data.getSerie();
   }
 
 }

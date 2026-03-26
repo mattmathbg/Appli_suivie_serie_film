@@ -1,6 +1,9 @@
 import {Component, inject} from '@angular/core';
 import {OMDbService} from "../OMDB/OMDB.service";
 import { Router } from '@angular/router';
+import {DataSerieModel} from "../models/data-serie.model";
+import {DataService} from "../Services/data.service";
+import {DataFilmModel} from "../models/data-film.models";
 
 @Component({
   selector: 'app-explorer-page',
@@ -16,16 +19,22 @@ export class ExplorerPage {
   protected contenus: any[] = [];
   public OMDB = inject(OMDbService);
   private router = inject(Router);
+  private dataService = inject(DataService);
 
   constructor() {}
 
-  lancerRecherche(){
+  async lancerRecherche() {
     this.contenus = [];
-    if (this.searchQuery.trim() !== '') {
-      this.OMDB.searchQuery(this.searchQuery).subscribe((res: any) => {
 
+    if (this.searchQuery.trim() !== '') {
+      this.OMDB.searchQuery(this.searchQuery).subscribe(async (res: any) => {
         if (res.Search) {
-          this.contenus = res.Search;
+          const resultatsBruts = res.Search;
+
+          for (let film of resultatsBruts) {
+            film.estAjoute = await this.dataService.checkIfSaved(film.imdbID);
+          }
+          this.contenus = resultatsBruts;
         }
       });
     }
@@ -33,6 +42,29 @@ export class ExplorerPage {
 
   voirDetails(id: string) {
     this.router.navigate(['/details', id]);
+  }
+
+  async ajouterContent(filmOMDb: any) {
+    let nouveauContenu;
+
+    if (filmOMDb.Type === 'movie') {
+      nouveauContenu = new DataFilmModel({
+        id: filmOMDb.imdbID,
+        name: filmOMDb.Title,
+        imageUrl: filmOMDb.Poster,
+        type: 'movie'
+      });
+    } else {
+      nouveauContenu = new DataSerieModel({
+        id: filmOMDb.imdbID,
+        name: filmOMDb.Title,
+        imageUrl: filmOMDb.Poster,
+        type: 'series'
+      });
+    }
+
+    await this.dataService.addContenue(nouveauContenu);
+    filmOMDb.estAjoute = true;
   }
 
 }

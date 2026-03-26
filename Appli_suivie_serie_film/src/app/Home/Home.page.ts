@@ -1,6 +1,7 @@
 import {Component, inject} from '@angular/core';
 import {DataService} from "../Services/data.service";
 import {DataSerieModel} from "../models/data-serie.model";
+import {DataFilmModel} from "../models/data-film.models";
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ export class HomePage {
   private data = inject(DataService);
   constructor() {}
 
-  getSerie(): DataSerieModel[] {
+  getSerie(): (DataSerieModel | DataFilmModel)[] {
     return this.data.getDataSeries();
   }
 }

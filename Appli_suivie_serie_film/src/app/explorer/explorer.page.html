@@ -1,12 +1,11 @@
 <app-header></app-header>
 
 <ion-content [fullscreen]="true">
-
   <ion-grid>
     <ion-row class="ion-align-items-center">
       <ion-col size="8">
         <ion-searchbar
-          placeholder="Chercher un film"
+          placeholder="Chercher..."
           [(ngModel)]="searchQuery"
           (keyup.enter)="lancerRecherche()">
         </ion-searchbar>
@@ -19,15 +18,32 @@
 
   @if (contenus.length > 0) {
     @for (film of contenus; track film.imdbID) {
-      <ion-card (click)="voirDetails(film.imdbID)">
-        <ion-img [src]="film.Poster"></ion-img>
-        <ion-card-header>
-          <ion-card-title>{{ film.Title }}</ion-card-title>
-          <ion-card-subtitle>{{ film.Year }}</ion-card-subtitle>
-        </ion-card-header>
+      <ion-card>
+        <div (click)="voirDetails(film.imdbID)">
+          <ion-img [src]="film.Poster !== 'N/A' ? film.Poster : 'assets/placeholder.png'"></ion-img>
+          <ion-card-header>
+            <ion-badge [color]="film.Type === 'movie' ? 'primary' : 'tertiary'">
+              {{ film.Type === 'movie' ? 'FILM' : 'SÉRIE' }}
+            </ion-badge>
+            <ion-card-title>{{ film.Title }}</ion-card-title>
+            <ion-card-subtitle>{{ film.Year }}</ion-card-subtitle>
+          </ion-card-header>
+        </div>
+
+        <ion-item lines="none">
+          @if (film.estAjoute) {
+            <ion-button slot="end" fill="clear" color="success" [disabled]="true">
+              <ion-icon slot="start" name="checkmark-circle"></ion-icon>
+              Dans ma liste
+            </ion-button>
+          } @else {
+            <ion-button slot="end" fill="clear" (click)="ajouterContent(film); $event.stopPropagation()">
+              <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+              Ajouter
+            </ion-button>
+          }
+        </ion-item>
       </ion-card>
     }
-  } @else if (searchQuery.trim() !== '') {
-    <p>Aucun résultat pour "{{ searchQuery }}"</p>
   }
 </ion-content>

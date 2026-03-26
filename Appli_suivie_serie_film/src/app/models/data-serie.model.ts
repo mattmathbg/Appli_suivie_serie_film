@@ -1,47 +1,26 @@
 export class DataSerieModel {
-  id: number;
-  name: string;
-  imageUrl: string;
-  description: string;
-  nbSeasons: number;
-  nbEpisodes: number;
-  seasonToSee: number;
-  episodeToSee: number;
-  episodeToBeSeen: number;
-  episodeToSeeTitle: string;
-  episodeToBeSeenTitle: string;
-  note: number;
-  lastDate: Date;
+  // On initialise avec des valeurs par défaut pour éviter l'erreur TS2564
+  id: string = '';
+  name: string = '';
+  imageUrl: string = '';
+  type: 'series' = 'series';
+  estAjoute: boolean = false;
+  description: string = '';
+  nbSeasons: number = 0;
+  nbEpisodes: number = 0;
+  seasonToSee: number = 1;
+  episodeToSee: number = 1;
+  episodeToSeeTitle: string = '';
+  note: number = 0;
+  lastDate: Date = new Date();
 
+  constructor(fields?: Partial<DataSerieModel>) {
+    if (fields) {
+      Object.assign(this, fields);
 
-  constructor(
-    id: number,
-    name: string,
-    imageUrl: string,
-    description: string,
-    nbSeasons: number,
-    nbEpisodes: number,
-    seasonToSee: number,
-    episodeToSee: number,
-    episodeToBeSeen: number,
-    episodeToSeeTitle: string,
-    episodeToBeSeenTitle: string,
-    note: number,
-    lastDate: Date = new Date()
-  ) {
-    this.id = id;
-    this.name = name;
-    this.imageUrl = imageUrl;
-    this.description = description;
-    this.nbSeasons = nbSeasons;
-    this.nbEpisodes = nbEpisodes;
-    this.seasonToSee = seasonToSee;
-    this.episodeToSee = episodeToSee;
-    this.episodeToBeSeen = episodeToBeSeen;
-    this.episodeToSeeTitle = episodeToSeeTitle;
-    this.episodeToBeSeenTitle = episodeToBeSeenTitle;
-    this.note = note;
-    this.lastDate = lastDate;
+      if (fields.lastDate) {
+        this.lastDate = new Date(fields.lastDate);
+      }
+    }
   }
-
 }

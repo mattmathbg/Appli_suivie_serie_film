@@ -8,7 +8,13 @@
   </ion-header>
   <ion-content class="ion-padding">
     <app-stats></app-stats>
-    <app-slider-series-films titre="Series en cours"></app-slider-series-films>
-    <app-slider-series-films titre="Vos series"></app-slider-series-films>
+    <app-slider-series-films
+      titre="Séries en cours"
+      [listeSerieFilm]="seriesEnCours">
+    </app-slider-series-films>
+
+    <app-slider-series-films
+      titre="Vos séries"
+      [listeSerieFilm]="toutesMesSeries"> </app-slider-series-films>
   </ion-content>
 </ion-content>
