@@ -36,17 +36,12 @@ export class DetailsPage implements OnInit{
   }
 
   async lancerNotification() {
-    console.log("1 - bouton cliqué");
 
     const permissions = await LocalNotifications.requestPermissions();
-    console.log("2 - permission reçue :", JSON.stringify(permissions));
 
     if (permissions.display !== 'granted') {
-      console.log("3 - permission REFUSÉE, on arrête");
       return;
     }
-
-    console.log("4 - permission OK, on envoie la notif");
 
     await LocalNotifications.schedule({
       notifications: [{
@@ -57,7 +52,6 @@ export class DetailsPage implements OnInit{
       }]
     });
 
-    console.log("5 - notification programmée !");
   }
 
   async supprimer() {
