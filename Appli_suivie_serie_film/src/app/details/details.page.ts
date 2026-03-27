@@ -23,30 +23,20 @@ export class DetailsPage{
   public estSauvegarde: boolean = false;
   private cd = inject(ChangeDetectorRef);
 
-
-
-
   constructor() { }
 
-
-
-  async lancerNotification() {
-
-    const permissions = await LocalNotifications.requestPermissions();
-
-    if (permissions.display !== 'granted') {
-      return;
-    }
+  async meRappeler() {
+    const dureeMinutes = this.mediaDetails.Runtime; // ex: "45 min" depuis l'API OMDb
+    const dureeMs = parseInt(dureeMinutes) * 60 * 1000;
 
     await LocalNotifications.schedule({
       notifications: [{
-        title: "Test",
-        body: "Ça marche !",
-        id: 1,
-        schedule: { at: new Date(Date.now() + 3000) }, // dans 3 secondes
+        title: "⏱️ C'est fini ?",
+        body: `Mets à jour ton avancement pour ${this.mediaDetails.Title} !`,
+        id: this.mediaDetails.Id,
+        schedule: { at: new Date(Date.now() + dureeMs) }
       }]
     });
-
   }
 
   async ajouter() {
