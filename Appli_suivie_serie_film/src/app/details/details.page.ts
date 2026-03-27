@@ -33,4 +33,8 @@ export class DetailsPage implements OnInit{
     this.NotificationService.scheduleNotification(titre, message, 1,)
   }
 
+  SupprimerSerieFilm(){
+
+  }
+
 }
