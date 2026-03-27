@@ -3,3 +3,11 @@ ion-img {
   height: 20%;
   object-fit: cover;
 }
+
+ion-button {
+  display: block;
+  /*auto centre horizontalement*/
+  margin: 45px auto;
+  width: 50%;
+  height: 35px;
+}
