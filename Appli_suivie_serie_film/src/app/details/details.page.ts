@@ -1,8 +1,11 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {OMDbService} from "../OMDB/OMDB.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import { Notification } from '../Services/Notification';
 import {LocalNotifications} from "@capacitor/local-notifications";
+import {DataService} from "../Services/data.service";
+import {DataSerieModel} from "../models/data-serie.model";
+import {ExplorerPage} from "../explorer/explorer.page";
 
 @Component({
   selector: 'app-details',
@@ -16,6 +19,11 @@ export class DetailsPage implements OnInit{
   private route = inject(ActivatedRoute);
   private OMDB = inject(OMDbService);
   private NotificationService = inject(Notification);
+  private dataService = inject(DataService);
+
+
+
+
   constructor() { }
 
   ngOnInit() {
@@ -52,8 +60,9 @@ export class DetailsPage implements OnInit{
     console.log("5 - notification programmée !");
   }
 
-  SupprimerSerieFilm(){
-
+  async supprimer() {
+    await this.dataService.Supprimer(this.mediaDetails.imdbID);
   }
+
 
 }

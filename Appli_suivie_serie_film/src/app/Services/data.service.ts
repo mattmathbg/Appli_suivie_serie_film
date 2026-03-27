@@ -89,4 +89,16 @@ export class DataService {
     return this.dataSeries[id];
   }
 
+
+  //Promise permet de dire que la fonction va finir son travail
+  //cela evite que angular passe a la suite avant que la fonction ne soit fini
+  //ce qui pourrait causer des bug
+  async Supprimer(id: string): Promise<void> {
+    //await permet d'attendre que la ligne se fini car si on arrive pas
+    //a recupérer le contenu ça peut buger
+    const all = await this.getContenues();
+    const filtered = all.filter(item => item.id !== id);
+    await this._storage?.set(this.STORAGE_KEY, filtered);
+  }
+
 }
