@@ -1,6 +1,6 @@
 import {Component, inject} from '@angular/core';
 import {OMDbService} from "../OMDB/OMDB.service";
-import { Router } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {DataSerieModel} from "../models/data-serie.model";
 import {DataService} from "../Services/data.service";
 import {DataFilmModel} from "../models/data-film.models";
@@ -20,6 +20,7 @@ export class ExplorerPage {
   public OMDB = inject(OMDbService);
   private router = inject(Router);
   private dataService = inject(DataService);
+  private route = inject(ActivatedRoute);
 
   constructor() {}
 
@@ -41,7 +42,7 @@ export class ExplorerPage {
   }
 
   voirDetails(id: string) {
-    this.router.navigate(['/details', id]);
+    this.router.navigate(['details', id], { relativeTo: this.route });
   }
 
   async ajouterContent(filmOMDb: any) {

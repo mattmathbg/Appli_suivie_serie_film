@@ -101,4 +101,10 @@ export class DataService {
     await this._storage?.set(this.STORAGE_KEY, filtered);
   }
 
+
+  //fonction pour vider le storage si besoin
+  async clearStorage() {
+    await this._storage?.clear();
+  }
+
 }

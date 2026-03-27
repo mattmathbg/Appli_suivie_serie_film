@@ -1,11 +1,11 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, inject, OnInit} from '@angular/core';
 import {OMDbService} from "../OMDB/OMDB.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import { Notification } from '../Services/Notification';
 import {LocalNotifications} from "@capacitor/local-notifications";
 import {DataService} from "../Services/data.service";
 import {DataSerieModel} from "../models/data-serie.model";
-import {ExplorerPage} from "../explorer/explorer.page";
+import {DataFilmModel} from "../models/data-film.models";
 
 @Component({
   selector: 'app-details',
@@ -13,7 +13,7 @@ import {ExplorerPage} from "../explorer/explorer.page";
   styleUrls: ['./details.page.scss'],
   standalone: false
 })
-export class DetailsPage implements OnInit{
+export class DetailsPage{
   //contient tout ce que l'API donne (titre,acteurs etc)
   mediaDetails: any = null;
   private route = inject(ActivatedRoute);
@@ -21,19 +21,14 @@ export class DetailsPage implements OnInit{
   private NotificationService = inject(Notification);
   protected dataService = inject(DataService);
   public estSauvegarde: boolean = false;
+  private cd = inject(ChangeDetectorRef);
+
 
 
 
   constructor() { }
 
-  ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id) {
-      this.OMDB.getDetails(id).subscribe((res: any) => {
-        this.mediaDetails = res;
-      });
-    }
-  }
+
 
   async lancerNotification() {
 
@@ -54,12 +49,52 @@ export class DetailsPage implements OnInit{
 
   }
 
-  async supprimer() {
-    await this.dataService.Supprimer(this.mediaDetails.imdbID);
+  async ajouter() {
+    let nouveauContenu;
+
+    if (this.mediaDetails.Type === 'movie') {
+      nouveauContenu = new DataFilmModel({
+        id: this.mediaDetails.imdbID,
+        name: this.mediaDetails.Title,
+        imageUrl: this.mediaDetails.Poster,
+        type: 'movie'
+      });
+    } else {
+      nouveauContenu = new DataSerieModel({
+        id: this.mediaDetails.imdbID,
+        name: this.mediaDetails.Title,
+        imageUrl: this.mediaDetails.Poster,
+        type: 'series'
+      });
+    }
+
+    await this.dataService.addContenue(nouveauContenu);
+    this.estSauvegarde = true;
+
   }
 
-  async ionViewWillEnter() {
-    this.estSauvegarde = await this.dataService.checkIfSaved(this.mediaDetails.imdbID);
+  async supprimer() {
+    await this.dataService.Supprimer(this.mediaDetails.imdbID);
+    this.estSauvegarde = false;
+
   }
+
+  /**
+   * Sert a initialiser la page comme ngOnInit mais
+   * remplace ngOnInit car elle se relance à chaque fois qu'on arrive sur la page
+   * ngOnInit lui ne se lance qu'une seule fois donc si on revenait sur la page
+   * après un ajout/suppression, le bouton ne se mettrait pas à jour.
+   */
+  async ionViewWillEnter() {
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.OMDB.getDetails(id).subscribe(async (res: any) => {
+        this.mediaDetails = res;
+        //on verifie si le film est dans le storage
+        this.estSauvegarde = await this.dataService.checkIfSaved(this.mediaDetails.imdbID);
+      });
+    }
+  }
+
 
 }
