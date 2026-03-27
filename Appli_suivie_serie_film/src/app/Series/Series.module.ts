@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 import { SeriesPageRoutingModule } from './Series-routing.module';
 import { SeriesPage } from "./Series.page";
-import { SerieVueComponentModule } from "./SerieVue/SerieVue.module";
 import { HomePageModule } from "../Home/Home.module";
 
 @NgModule({
@@ -15,7 +14,6 @@ import { HomePageModule } from "../Home/Home.module";
     FormsModule,
     ExploreContainerComponentModule,
     SeriesPageRoutingModule,
-    SerieVueComponentModule,
     HomePageModule,
   ],
   declarations: [SeriesPage]
