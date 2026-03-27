@@ -2,6 +2,7 @@ import {Component, inject, OnInit} from '@angular/core';
 import {OMDbService} from "../OMDB/OMDB.service";
 import {ActivatedRoute} from "@angular/router";
 import { Notification } from '../Services/Notification';
+import {LocalNotifications} from "@capacitor/local-notifications";
 
 @Component({
   selector: 'app-details',
@@ -26,11 +27,29 @@ export class DetailsPage implements OnInit{
     }
   }
 
-  lancerNotification() {
-    const titre = "Rappel de série";
-    const message = "Le prochain épisode de votre série sort aujourd'hui !";
-    this.NotificationService.requestPermissions();
-    this.NotificationService.scheduleNotification(titre, message, 1,)
+  async lancerNotification() {
+    console.log("1 - bouton cliqué");
+
+    const permissions = await LocalNotifications.requestPermissions();
+    console.log("2 - permission reçue :", JSON.stringify(permissions));
+
+    if (permissions.display !== 'granted') {
+      console.log("3 - permission REFUSÉE, on arrête");
+      return;
+    }
+
+    console.log("4 - permission OK, on envoie la notif");
+
+    await LocalNotifications.schedule({
+      notifications: [{
+        title: "Test",
+        body: "Ça marche !",
+        id: 1,
+        schedule: { at: new Date(Date.now() + 3000) }, // dans 3 secondes
+      }]
+    });
+
+    console.log("5 - notification programmée !");
   }
 
 }
