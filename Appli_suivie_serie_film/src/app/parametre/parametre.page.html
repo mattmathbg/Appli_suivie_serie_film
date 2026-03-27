@@ -8,16 +8,21 @@
 
     <ion-item lines="none">
       <ion-icon slot="start" [name]="modeClair ? 'sunny-outline' : 'moon-outline'"></ion-icon>
-
+      @if(modeClair){
+        <ion-toggle (ionChange)="toggleDarkMode($event)" [checked]="modeClair">
+          Activer le mode sombre
+        </ion-toggle>
+      }@else{
       <ion-toggle (ionChange)="toggleDarkMode($event)" [checked]="modeClair">
         Activer le mode clair
       </ion-toggle>
+      }
     </ion-item>
   </ion-list>
 
   <div class="ion-padding">
     <ion-button expand="block" fill="outline" color="medium" (click)="resetTheme()">
-      Remettre en sombre
+      Réinitialiser
     </ion-button>
   </div>
 </ion-content>
