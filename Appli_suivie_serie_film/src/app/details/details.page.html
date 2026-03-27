@@ -15,10 +15,15 @@
       Me rappeler la sortie
     </ion-button>
 
+    @if(estSauvegarde) {
       <ion-button color="danger" (click)="supprimer()">
         Supprimer
       </ion-button>
-
+    } @else {
+      <ion-button color="primary" (click)="dataService.addContenue(mediaDetails)">
+        Ajouter
+      </ion-button>
+    }
     }
 
 

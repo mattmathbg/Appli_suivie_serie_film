@@ -52,14 +52,16 @@ export class ExplorerPage {
         id: filmOMDb.imdbID,
         name: filmOMDb.Title,
         imageUrl: filmOMDb.Poster,
-        type: 'movie'
+        type: 'movie',
+        estAjoute: true
       });
     } else {
       nouveauContenu = new DataSerieModel({
         id: filmOMDb.imdbID,
         name: filmOMDb.Title,
         imageUrl: filmOMDb.Poster,
-        type: 'series'
+        type: 'series',
+        estAjoute: true
       });
     }
 

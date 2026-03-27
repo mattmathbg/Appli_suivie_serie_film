@@ -19,8 +19,8 @@ export class DetailsPage implements OnInit{
   private route = inject(ActivatedRoute);
   private OMDB = inject(OMDbService);
   private NotificationService = inject(Notification);
-  private dataService = inject(DataService);
-
+  protected dataService = inject(DataService);
+  public estSauvegarde: boolean = false;
 
 
 
@@ -64,5 +64,8 @@ export class DetailsPage implements OnInit{
     await this.dataService.Supprimer(this.mediaDetails.imdbID);
   }
 
+  async ionViewWillEnter() {
+    this.estSauvegarde = await this.dataService.checkIfSaved(this.mediaDetails.imdbID);
+  }
 
 }
