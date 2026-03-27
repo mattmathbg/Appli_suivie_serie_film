@@ -19,6 +19,6 @@ ion-card {
   border-radius: 8px;
   overflow: hidden;
 
-  background: linear-gradient(#1a3a6b, #1e4d8c,#1a3a6b);
+  background: var(--stat-card-bg) !important;
   border: 2px solid white;
 }

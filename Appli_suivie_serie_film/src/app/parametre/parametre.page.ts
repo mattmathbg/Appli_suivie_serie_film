@@ -6,10 +6,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parametre.page.scss'],
   standalone: false,
 })
-export class ParametrePage  {
+export class ParametrePage {
+  modeClair: boolean = false;
 
-  constructor() { }
+  constructor() {
+    this.modeClair = document.body.classList.contains('light-mode');
+  }
 
+  toggleDarkMode(event: any) {
+    const boutonEstCoche = event.detail.checked;
+    this.applyTheme(boutonEstCoche);
+  }
 
+  applyTheme(light: boolean) {
+    this.modeClair = light;
+    document.body.classList.toggle('light-mode', light);
+  }
 
+  resetTheme() {
+    this.applyTheme(false);
+  }
 }

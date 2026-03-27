@@ -1,2 +1,22 @@
-// For information on how to create your own theme, please refer to:
-// https://ionicframework.com/docs/theming/
+:root {
+  --ion-background-color: #121212;
+  --ion-text-color: #ffffff;
+  --ion-item-background: #1e1e1e;
+  --ion-toolbar-background: #1f1f1f;
+  --ion-color-primary: #3880ff;
+
+  --stat-card-bg: linear-gradient(135deg, #102a43 0%, #243b53 100%);
+  --stat-card-text: #ffffff;
+}
+
+.light-mode {
+  --ion-background-color: linear-gradient(180deg, #b794f4 0%, #fbb6ce 100%) !important;
+  --ion-text-color: #000000 !important;
+  --ion-item-background: transparent !important;
+  --ion-toolbar-background: transparent !important;
+  --ion-card-background: rgba(255, 255, 255, 0.4) !important;
+
+  /* Stats en mode CLAIR : Le bleu brillant de ton image */
+  --stat-card-bg: linear-gradient(135deg, #4299e1 0%, #667eea 100%) !important;
+  --stat-card-text: #000000 !important; /* Texte noir sur les cartes bleues */
+}

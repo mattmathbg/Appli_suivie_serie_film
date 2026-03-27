@@ -1,35 +1,23 @@
 <app-header></app-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">parametre</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <ion-list>
     <ion-list-header>
-      <ion-label>Paramètre</ion-label>
+      <ion-label>Apparence</ion-label>
     </ion-list-header>
 
-    <ion-item>
-      <ion-icon slot="start" name="moon-outline"></ion-icon>
-      <ion-toggle>Mode sombre : </ion-toggle>
-    </ion-item>
-    <ion-item>
-      <ion-icon slot="start" name="notifications-outline"></ion-icon>
-      <ion-toggle>Notifications : </ion-toggle>
-    </ion-item>
-    <ion-item>
-      <ion-icon slot="start" name="flag-outline"></ion-icon>
-      <ion-label>Languages : </ion-label>
-      <ion-select>
-        <ion-select-option>Francais</ion-select-option>
-        <ion-select-option>Allemand</ion-select-option>
-        <ion-select-option>Anglais</ion-select-option>
-        <ion-select-option>Espagnole</ion-select-option>
-      </ion-select>
+    <ion-item lines="none">
+      <ion-icon slot="start" [name]="modeClair ? 'sunny-outline' : 'moon-outline'"></ion-icon>
+
+      <ion-toggle (ionChange)="toggleDarkMode($event)" [checked]="modeClair">
+        Activer le mode clair
+      </ion-toggle>
     </ion-item>
   </ion-list>
-  <ion-button>Réinitialiser</ion-button>
+
+  <div class="ion-padding">
+    <ion-button expand="block" fill="outline" color="medium" (click)="resetTheme()">
+      Remettre en sombre
+    </ion-button>
+  </div>
 </ion-content>
