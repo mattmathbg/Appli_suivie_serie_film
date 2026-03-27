@@ -1,7 +1,7 @@
 <h2>{{ titre }} :</h2>
 <div class="scroll-horizontal">
   @for (item of listeSerieFilm; track item.id) {
-    <div class="carte-serie">
+    <div class="carte-serie" (click)="voirDetails(item.id)">
       <img [src]="item.imageUrl" [alt]="item.name">
       <p>{{ item.name }}</p>
     </div>

@@ -3,6 +3,7 @@ import {DataService} from "../Services/data.service";
 import {DataSerieModel} from "../models/data-serie.model";
 import {DataFilmModel} from "../models/data-film.models";
 
+
 @Component({
   selector: 'app-films-page',
   templateUrl: 'Films.page.html',
@@ -27,6 +28,7 @@ export class FilmsPage {
     }
   }
 
+
   async ionViewWillEnter() {
     const uniquementFilm = await this.data.getFilm();
 
@@ -38,4 +40,5 @@ export class FilmsPage {
   async getSerie(): Promise<DataFilmModel[]> {
     return await this.data.getFilm();
   }
+
 }
