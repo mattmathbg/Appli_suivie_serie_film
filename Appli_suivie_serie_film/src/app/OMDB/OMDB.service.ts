@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class OMDbService {
 
-  private apiUrl = 'http://www.omdbapi.com';
+  private apiUrl = 'https://www.omdbapi.com';
   private APIKEY = '3b4e5246';
   private http = inject(HttpClient);
 
