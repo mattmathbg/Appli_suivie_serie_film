@@ -42,6 +42,7 @@ export class ExplorerPage {
   }
 
   voirDetails(id: string) {
+    //relativeTo permet de dire depuis ou je construis le chemin
     this.router.navigate(['details', id], { relativeTo: this.route });
   }
 

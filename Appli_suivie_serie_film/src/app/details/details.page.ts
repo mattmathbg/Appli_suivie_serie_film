@@ -21,7 +21,7 @@ export class DetailsPage{
   private NotificationService = inject(Notification);
   protected dataService = inject(DataService);
   public estSauvegarde: boolean = false;
-  private cd = inject(ChangeDetectorRef);
+
 
 
 
