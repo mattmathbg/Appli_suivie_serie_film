@@ -26,6 +26,7 @@ export class DataService {
       seasonToSee: 1,
       episodeToSee: 4,
       episodeToSeeTitle: "Twice Born",
+      duree: 120,
       note: 4.7,
       lastDate: new Date(),
     }
@@ -38,6 +39,11 @@ export class DataService {
   async init() {
     const storage = await this.storage.create();
     this._storage = storage;
+  }
+
+  // Remplace toute la liste par la version mise à jour
+  async mettreAJour(liste: (DataSerieModel | DataFilmModel)[]): Promise<void> {
+    await this._storage?.set(this.STORAGE_KEY, liste);
   }
 
   // Récupérer les séries et les transformer en instances de classe

@@ -12,6 +12,7 @@ export class DataSerieModel {
   episodeToSee: number = 1;
   episodeToSeeTitle: string = '';
   note: number = 0;
+  duree: number = 0;
   lastDate: Date = new Date();
 
   constructor(fields?: Partial<DataSerieModel>) {
