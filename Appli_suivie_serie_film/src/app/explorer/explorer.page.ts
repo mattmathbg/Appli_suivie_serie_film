@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import {DataSerieModel} from "../models/data-serie.model";
 import {DataService} from "../Services/data.service";
 import {DataFilmModel} from "../models/data-film.models";
+import {FormulaireAjoutComponent} from "../components/formulaire-ajout/formulaire-ajout.component";
+import {ModalController} from "@ionic/angular";
 
 @Component({
   selector: 'app-explorer-page',
@@ -20,6 +22,7 @@ export class ExplorerPage {
   public OMDB = inject(OMDbService);
   private router = inject(Router);
   private dataService = inject(DataService);
+  private modalCtrl = inject(ModalController);
 
   constructor() {}
 
@@ -39,6 +42,18 @@ export class ExplorerPage {
       });
     }
   }
+
+  async OuvertureAjout() {
+    const modal = await this.modalCtrl.create({
+      component: FormulaireAjoutComponent,
+      initialBreakpoint: 0.8, // Monte un peu plus haut (80%)
+      breakpoints: [0, 0.5, 0.8, 1],
+      handle: true // Ajoute la petite barre grise en haut pour que l'utilisateur puisse tirer la modale
+    });
+
+    await modal.present();
+
+}
 
   voirDetails(id: string) {
     this.router.navigate(['/details', id]);

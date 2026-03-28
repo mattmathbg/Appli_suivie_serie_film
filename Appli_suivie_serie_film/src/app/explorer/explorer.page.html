@@ -1,17 +1,28 @@
 <app-header></app-header>
 
 <ion-content [fullscreen]="true">
-  <ion-grid>
+  <ion-grid class="ion-no-padding">
     <ion-row class="ion-align-items-center">
-      <ion-col size="8">
+      <ion-col size="7">
         <ion-searchbar
           placeholder="Chercher..."
           [(ngModel)]="searchQuery"
-          (keyup.enter)="lancerRecherche()">
+          (keyup.enter)="lancerRecherche()"
+          enterkeyhint="search"
+          class="ion-no-padding">
         </ion-searchbar>
       </ion-col>
-      <ion-col size="4">
-        <ion-button expand="block" (click)="lancerRecherche()">Rechercher</ion-button>
+
+      <ion-col size="2.5">
+        <ion-button expand="block" (click)="lancerRecherche()" color="primary">
+          <ion-icon slot="icon-only" name="search"></ion-icon>
+        </ion-button>
+      </ion-col>
+
+      <ion-col size="2.5">
+        <ion-button expand="block" (click)="OuvertureAjout()" color="secondary">
+          <ion-icon slot="icon-only" name="add"></ion-icon>
+        </ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
