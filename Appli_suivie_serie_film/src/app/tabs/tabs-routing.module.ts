@@ -10,19 +10,31 @@ const routes: Routes = [
     children: [
       {
         path: 'Films',
-        loadChildren: () => import('../Films/Films.module').then(m => m.FilmsPageModule)
+        children: [
+          { path: '', loadChildren: () => import('../Films/Films.module').then(m => m.FilmsPageModule) },
+          { path: 'details/:id', loadChildren: () => import('../details/details.module').then(m => m.DetailsPageModule) }
+        ]
       },
       {
         path: 'explorer',
-        loadChildren: () => import('../explorer/explorer.module').then(m => m.ExplorerPageModule)
+        children: [
+          { path: '', loadChildren: () => import('../explorer/explorer.module').then(m => m.ExplorerPageModule) },
+          { path: 'details/:id', loadChildren: () => import('../details/details.module').then(m => m.DetailsPageModule) }
+        ]
       },
       {
         path: 'Home',
-        loadChildren: () => import('../Home/Home.module').then(m => m.HomePageModule)
+        children: [
+          { path: '', loadChildren: () => import('../Home/Home.module').then(m => m.HomePageModule) },
+          { path: 'details/:id', loadChildren: () => import('../details/details.module').then(m => m.DetailsPageModule) }
+        ]
       },
       {
         path: 'Series',
-        loadChildren: () => import('../Series/Series.module').then(m => m.SeriesPageModule)
+        children: [
+          { path: '', loadChildren: () => import('../Series/Series.module').then(m => m.SeriesPageModule) },
+          { path: 'details/:id', loadChildren: () => import('../details/details.module').then(m => m.DetailsPageModule) }
+        ]
       },
       {
         path: '',

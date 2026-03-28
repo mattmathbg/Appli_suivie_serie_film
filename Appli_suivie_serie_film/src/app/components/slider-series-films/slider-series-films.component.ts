@@ -1,5 +1,5 @@
 import {Component, inject, Input} from '@angular/core';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-slider-series-films',
@@ -12,9 +12,10 @@ export class SliderSeriesFilmsComponent {
   @Input() titre: string = "Séries";
   @Input() listeSerieFilm: any[] = [];
   private router = inject(Router);
+  private route = inject(ActivatedRoute);
 
   voirDetails(id: string) {
-    this.router.navigate(['/details', id]);
+    this.router.navigate(['details', id], { relativeTo: this.route });
   }
 
   constructor() {}

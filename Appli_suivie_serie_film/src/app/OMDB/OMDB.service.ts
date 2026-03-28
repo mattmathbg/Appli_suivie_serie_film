@@ -22,4 +22,7 @@ export class OMDbService {
     return this.http.get(this.apiUrl + '/?i=' + id + '&apikey=' + this.APIKEY);
   }
 
+  getSaison(id: string, saison: number) {
+    return this.http.get(this.apiUrl + '/?i=' + id + '&Season=' + saison + '&apikey=' + this.APIKEY);
+  }
 }

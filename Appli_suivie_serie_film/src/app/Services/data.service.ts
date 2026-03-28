@@ -24,7 +24,11 @@ export class DataService {
     await this.loadAll();
   }
 
-  // Charge les données une seule fois au démarrage
+  // Remplace toute la liste par la version mise à jour
+  async mettreAJour(liste: (DataSerieModel | DataFilmModel)[]): Promise<void> {
+    await this._storage?.set(this.STORAGE_KEY, liste);
+  }
+
   private async loadAll() {
     const data = await this._storage?.get(this.STORAGE_KEY);
     if (data) {
@@ -88,4 +92,10 @@ export class DataService {
   public checkIfSaved(id: string): boolean {
     return this.dataSeries.some(item => item.id === id);
   }
+
+  //fonction pour vider le storage si besoin
+  async clearStorage() {
+    await this._storage?.clear();
+  }
+
 }

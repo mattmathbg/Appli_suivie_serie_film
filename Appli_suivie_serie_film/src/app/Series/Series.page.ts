@@ -9,10 +9,11 @@ import {DataSerieModel} from "../models/data-serie.model";
   standalone: false,
 })
 export class SeriesPage {
-  private data = inject(DataService);
+  protected data = inject(DataService);
   public dataSeries: DataSerieModel[] = [];
   public seriesEnCours: DataSerieModel[] = [];
   public toutesMesSeries: DataSerieModel[] = [];
+
   constructor() {}
 
   async ngOnInit() {
@@ -37,4 +38,8 @@ export class SeriesPage {
     return await this.data.getSerie();
   }
 
+
+  /* Pour clear le storage
+  <ion-button (click)="viderStorage()">Vider storage</ion-button>
+   */
 }
