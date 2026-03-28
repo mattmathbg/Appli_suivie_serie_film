@@ -40,6 +40,6 @@ export class SeriesPage {
 
 
   /* Pour clear le storage
-  <ion-button (click)="viderStorage()">Vider storage</ion-button>
+  <ion-button (click)="data.clearStorage()">Vider storage</ion-button>
    */
 }

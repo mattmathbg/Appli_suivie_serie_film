@@ -15,7 +15,7 @@ import {DataFilmModel} from "../models/data-film.models";
 })
 export class DetailsPage {
 
-  mediaDetails: any = null;
+  mediaDetails!: DataSerieModel | DataFilmModel ;
 
   private route = inject(ActivatedRoute);
   private OMDB = inject(OMDbService);
@@ -23,78 +23,105 @@ export class DetailsPage {
   protected dataService = inject(DataService);
   private cd = inject(ChangeDetectorRef);
 
+
+  name: string = '';
+  imageUrl: string = '';
+  type: 'movie' = 'movie';
+  estAjoute: boolean = false;
+  description: string = '';
+  actors: string = '';
+  rating: number = 0;
+  plot: string = '';
+  nbSeasons: number = 0;
+  nbEpisodes: number = 0;
+  seasonToSee: number = 1;
+  episodeToSee: number = 1;
+  episodeToSeeTitle: string = '';
   public estSauvegarde: boolean = false;
   public dureeFilm: number = 0;
   public currentTime: number = 0;
-  public episodeToSee: number = 1;
-  public seasonToSee: number = 1;
   public serieTerminee: boolean = false;
+  public id: string ='';
 
   constructor() {}
 
 
   async ionViewWillEnter() {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (!id) return;
+      const id = this.route.snapshot.paramMap.get('id');
+      this.id = id ?? '';
+    if (!this.id) return;
 
-    this.OMDB.getDetails(id).subscribe(async (res: any) => {
-      this.mediaDetails = res;
+    this.estSauvegarde = this.dataService.checkIfSaved(this.id);
 
-      this.estSauvegarde = await this.dataService.checkIfSaved(this.mediaDetails.imdbID);
-      this.dureeFilm = parseInt(this.mediaDetails.Runtime) || 0;
+    if (this.estSauvegarde) {
+      this.mediaDetails = this.dataService.getDataSerieById(this.id);
+      this.dureeFilm = (this.mediaDetails as DataFilmModel).duration || 0;
 
-      if (this.estSauvegarde) {
-        const tousLesContenus = await this.dataService.getContenues();
-        const contenu = tousLesContenus.find(c => c.id === this.mediaDetails.imdbID);
 
-        if (contenu && contenu.type === 'movie') {
-          this.currentTime = (contenu as DataFilmModel).currentTime;
-        }
-
-        if (contenu && contenu.type === 'series') {
-          this.episodeToSee = (contenu as DataSerieModel).episodeToSee;
-          this.seasonToSee = (contenu as DataSerieModel).seasonToSee;
-
-          // Si nbEpisodes est à 0, la série a été ajoutée sans cette info
-          // On appelle l'API pour connaître le nb d'épisodes de la saison actuelle
-          if ((contenu as DataSerieModel).nbEpisodes === 0) {
-            this.OMDB.getSaison(this.mediaDetails.imdbID, this.seasonToSee).subscribe(async (saisonRes: any) => {
-              if (saisonRes.Episodes) {
-                (contenu as DataSerieModel).nbEpisodes = saisonRes.Episodes.length;
-                await this.dataService.mettreAJour(tousLesContenus);
-              }
-            });
-          }
-        }
+      if (this.mediaDetails.type === 'movie') {
+        this.currentTime = (this.mediaDetails as DataFilmModel).currentTime;
       }
-    });
+
+      if (this.mediaDetails.type === 'series') {
+        this.episodeToSee = (this.mediaDetails as DataSerieModel).episodeToSee;
+        this.seasonToSee = (this.mediaDetails as DataSerieModel).seasonToSee;
+      }
+
+    }else {
+      this.OMDB.getDetails(this.id).subscribe((res: any) => {
+        this.mediaDetails = res;
+        this.dureeFilm = parseInt(res.Runtime) || 0;
+        this.name = res.Title;
+        this.imageUrl = res.Poster;
+        this.description = res.Plot;
+        this.actors = res.Actors;
+        this.rating = parseFloat(res.imdbRating) || 0;
+        this.plot = res.Plot;
+        this.nbSeasons = parseInt(res.totalSeasons) || 0;
+        this.currentTime = 0;
+        this.episodeToSee = 1;
+        this.seasonToSee = 1;
+        this.serieTerminee = false;
+      });
+    }
   }
 
   async ajouter() {
-    let nouveauContenu;
+    this.OMDB.getDetails(this.id).subscribe(async ( details: any) => {
+      let nouveauContenu;
 
-    if (this.mediaDetails.Type === 'movie') {
-      nouveauContenu = new DataFilmModel({
-        id: this.mediaDetails.imdbID,
-        name: this.mediaDetails.Title,
-        imageUrl: this.mediaDetails.Poster,
-        type: 'movie'
-      });
-    } else {
-      nouveauContenu = new DataSerieModel({
-        id: this.mediaDetails.imdbID,
-        name: this.mediaDetails.Title,
-        imageUrl: this.mediaDetails.Poster,
-        type: 'series'
-      });
-    }
+      if (details.Type === 'movie') {
+        nouveauContenu = new DataFilmModel({
+          id: details.imdbID,
+          name: details.Title,
+          imageUrl: details.Poster,
+          type: 'movie',
+          runtime: details.Runtime,
+          duration: parseInt(details.Runtime) || 0,
+          plot: details.Plot,
+          actors: details.Actors,
+          rating: details.imdbRating
+        });
+      } else {
+        nouveauContenu = new DataSerieModel({
+          id: details.imdbID,
+          name: details.Title,
+          imageUrl: details.Poster,
+          type: 'series',
+          plot: details.Plot,
+          actors: details.Actors,
+          rating: details.imdbRating,
+          nbSeasons: parseInt(details.totalSeasons) || 0
+        });
+      }
 
-    await this.dataService.addContenue(nouveauContenu);
-    this.estSauvegarde = true;
+      await this.dataService.addContenue(nouveauContenu);
+      this.mediaDetails.estAjoute = true;
+    });
   }
 
   async supprimer() {
-    await this.dataService.Supprimer(this.mediaDetails.imdbID);
+    await this.dataService.Supprimer(this.mediaDetails.id);
     this.estSauvegarde = false;
   }
 
@@ -102,7 +129,7 @@ export class DetailsPage {
   // Appelée quand l'utilisateur lâche le slider
   async sauvegarderProgression() {
     const tousLesContenus = await this.dataService.getContenues();
-    const contenu = tousLesContenus.find(c => c.id === this.mediaDetails.imdbID);
+    const contenu = tousLesContenus.find(c => c.id === this.mediaDetails.id);
 
     if (contenu && contenu.type === 'movie') {
       // On modifie l'objet directement dans le tableau (c'est une référence)
@@ -115,10 +142,11 @@ export class DetailsPage {
 
   async episodeSuivant() {
     const tousLesContenus = await this.dataService.getContenues();
-    const contenu = tousLesContenus.find(c => c.id === this.mediaDetails.imdbID);
+    const contenu = tousLesContenus.find(c => c.id === this.mediaDetails.id);
+
 
     // Nb de saisons totales depuis l'API OMDb ("4" → 4)
-    const nbSaisonsTotal = parseInt(this.mediaDetails.totalSeasons) || 99;
+    const nbSaisonsTotal = (contenu as DataSerieModel)?.nbSeasons || 99;
 
     // Nb d'épisodes de la saison actuelle — stocké dans le modèle
     // On utilise nbEpisodes comme "épisodes de la saison courante"
@@ -136,7 +164,7 @@ export class DetailsPage {
       const prochaineSaison = this.seasonToSee + 1;
 
       // Appel API pour connaître le nb d'épisodes de la saison suivante
-      this.OMDB.getSaison(this.mediaDetails.imdbID, prochaineSaison).subscribe(async (res: any) => {
+      this.OMDB.getSaison(this.mediaDetails.id, prochaineSaison).subscribe(async (res: any) => {
         // L'API renvoie un tableau "Episodes" avec tous les épisodes de la saison
         const nbEpisodesSuivante = res.Episodes ? res.Episodes.length : 99;
 
@@ -161,7 +189,7 @@ export class DetailsPage {
 
   async episodePrecedent() {
     const tousLesContenus = await this.dataService.getContenues();
-    const contenu = tousLesContenus.find(c => c.id === this.mediaDetails.imdbID);
+    const contenu = tousLesContenus.find(c => c.id === this.mediaDetails.id);
 
     // Si pas sauvegardé, on décrémente juste localement
     if (!contenu || contenu.type !== 'series') {
@@ -186,7 +214,7 @@ export class DetailsPage {
 
   async sauvegarderEpisode() {
     const tousLesContenus = await this.dataService.getContenues();
-    const contenu = tousLesContenus.find(c => c.id === this.mediaDetails.imdbID);
+    const contenu = tousLesContenus.find(c => c.id === this.mediaDetails.id);
 
     if (contenu && contenu.type === 'series') {
       (contenu as DataSerieModel).episodeToSee = this.episodeToSee;
@@ -199,13 +227,13 @@ export class DetailsPage {
   async meRappeler() {
     // On réutilise le service Notification au lieu d'appeler LocalNotifications directement
     // C'est plus propre et cohérent avec le reste de l'app
-    const dureeMinutes = parseInt(this.mediaDetails.Runtime) || 0;
+    const dureeMinutes = parseInt(this.mediaDetails.runtime) || 0;
 
     await this.NotificationService.scheduleNotification(
       "⏱️ C'est fini ?",
-      `Mets à jour ton avancement pour ${this.mediaDetails.Title} !`,
-      this.mediaDetails.imdbID,
-      this.mediaDetails.Poster,
+      `Mets à jour ton avancement pour ${this.mediaDetails.name} !`,
+      this.mediaDetails.id,
+      this.mediaDetails.poster,
       dureeMinutes * 60  // le service attend des secondes
     );
   }

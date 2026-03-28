@@ -2,17 +2,18 @@
 
 <ion-content [fullscreen]="true">
   @if (mediaDetails) {
-    <ion-img [src]="mediaDetails.Poster"></ion-img>
+    <ion-img [src]="mediaDetails.Poster || mediaDetails.imageUrl"></ion-img>
 
     <div class="ion-padding">
-      <h2>{{ mediaDetails.Title }}</h2>
-      <p>⭐ {{ mediaDetails.imdbRating }}</p>
-      <p><strong>Acteurs :</strong> {{ mediaDetails.Actors }}</p>
-      <p><strong>Synopsis :</strong> {{ mediaDetails.Plot }}</p>
+      <h2>{{ mediaDetails.Title || mediaDetails.name }}</h2>
+      <p>⭐ {{ mediaDetails.imdbRating || mediaDetails.rating }}</p>
+      <p><strong>Acteurs :</strong> {{ mediaDetails.Actors || mediaDetails.actors }}</p>
+      <p><strong>Synopsis :</strong> {{ mediaDetails.Plot || mediaDetails.plot }}</p>
     </div>
 
+    @if(mediaDetails)
     <!-- Progression FILM -->
-    @if (mediaDetails.Type === 'movie') {
+    @if (mediaDetails.Type === 'movie' || mediaDetails.type === 'movie') {
       <div class="ion-padding">
         <p><strong>Progression :</strong> {{ currentTime }} / {{ dureeFilm }} min</p>
         <ion-range

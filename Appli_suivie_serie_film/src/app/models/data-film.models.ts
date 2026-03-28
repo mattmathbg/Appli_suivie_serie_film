@@ -5,6 +5,10 @@ export class DataFilmModel {
   type: 'movie' = 'movie';
   estAjoute: boolean = false;
   description: string = '';
+  actors: string = '';
+  rating: number = 0;
+  plot: string = '';
+
 
   // --- Propriétés de progression spécifiques au FILM ---
   runtime: string = '';      // Durée totale (ex: "120 min")
