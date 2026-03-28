@@ -1,27 +1,29 @@
-import {Component, inject, Input, OnInit} from '@angular/core';
-import {IonicModule} from "@ionic/angular";
-import {DataSerieModel} from "../../models/data-serie.model";
-import {DataService} from "../../Services/data.service";
+import { Component, inject, OnInit } from '@angular/core';
+import { DataService } from "../../Services/data.service";
 
 @Component({
-    selector: 'app-stats',
-    templateUrl: './stats.component.html',
-    styleUrls: ['./stats.component.scss'],
-    standalone: false,
+  selector: 'app-stats',
+  templateUrl: './stats.component.html',
+  styleUrls: ['./stats.component.scss'],
+  standalone: false,
 })
-export class StatsComponent  implements OnInit {
-  private data = inject(DataService);
-  nbSerieFilms! : number;
+export class StatsComponent {
+  // On injecte le service qui contient les données
+  private dataService = inject(DataService);
 
   constructor() { }
 
-  ngOnInit(): void {
-    this.nbSerieFilms = this.getLenDataSeries();
+
+  // Fonctions pour récupérer les chiffres depuis le service
+  getTotal(): number {
+    return this.dataService.getLenTotal();
   }
 
-  public getLenDataSeries(): number{
-    return this.data.getLenDataSeries();
+  getNbSeries(): number {
+    return this.dataService.getNbSeries();
   }
 
-  protected readonly DataSerieModel = DataSerieModel;
+  getNbFilms(): number {
+    return this.dataService.getNbFilms();
+  }
 }

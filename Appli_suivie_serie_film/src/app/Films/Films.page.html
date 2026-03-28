@@ -1,13 +1,13 @@
 <app-header></app-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Series</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content class="ion-padding">
-    <app-stats></app-stats>
+
+  <app-stats></app-stats>
 
     <app-slider-series-films
       titre="Films en cours"
@@ -20,4 +20,3 @@
       [listeSerieFilm]="toutMesFilms">
     </app-slider-series-films>
   </ion-content>
-</ion-content>
