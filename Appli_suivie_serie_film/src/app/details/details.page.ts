@@ -28,6 +28,7 @@ export class DetailsPage {
   public currentTime: number = 0;
   public episodeToSee: number = 1;
   public seasonToSee: number = 1;
+  public serieTerminee: boolean = false;
 
   constructor() {}
 
@@ -39,28 +40,31 @@ export class DetailsPage {
     this.OMDB.getDetails(id).subscribe(async (res: any) => {
       this.mediaDetails = res;
 
-      // Vérifie si ce contenu est déjà dans le storage
       this.estSauvegarde = await this.dataService.checkIfSaved(this.mediaDetails.imdbID);
-
-      // "120 min" → 120   (parseInt coupe tout après le premier nombre)
-      // || 0 = si ça échoue, on met 0 par défaut
       this.dureeFilm = parseInt(this.mediaDetails.Runtime) || 0;
 
-      // Si le contenu est sauvegardé, on charge sa progression
       if (this.estSauvegarde) {
         const tousLesContenus = await this.dataService.getContenues();
-
-        // .find() cherche dans le tableau l'élément dont l'id correspond
         const contenu = tousLesContenus.find(c => c.id === this.mediaDetails.imdbID);
 
         if (contenu && contenu.type === 'movie') {
-          // "as DataFilmModel" dit à TypeScript : traite cet objet comme un film
           this.currentTime = (contenu as DataFilmModel).currentTime;
         }
 
         if (contenu && contenu.type === 'series') {
           this.episodeToSee = (contenu as DataSerieModel).episodeToSee;
           this.seasonToSee = (contenu as DataSerieModel).seasonToSee;
+
+          // Si nbEpisodes est à 0, la série a été ajoutée sans cette info
+          // On appelle l'API pour connaître le nb d'épisodes de la saison actuelle
+          if ((contenu as DataSerieModel).nbEpisodes === 0) {
+            this.OMDB.getSaison(this.mediaDetails.imdbID, this.seasonToSee).subscribe(async (saisonRes: any) => {
+              if (saisonRes.Episodes) {
+                (contenu as DataSerieModel).nbEpisodes = saisonRes.Episodes.length;
+                await this.dataService.mettreAJour(tousLesContenus);
+              }
+            });
+          }
         }
       }
     });
@@ -113,30 +117,45 @@ export class DetailsPage {
     const tousLesContenus = await this.dataService.getContenues();
     const contenu = tousLesContenus.find(c => c.id === this.mediaDetails.imdbID);
 
-    // Récupère le nb de saisons depuis l'API OMDb (ex: "4" → 4)
+    // Nb de saisons totales depuis l'API OMDb ("4" → 4)
     const nbSaisonsTotal = parseInt(this.mediaDetails.totalSeasons) || 99;
 
-    // Récupère le nb d'épisodes par saison depuis le modèle sauvegardé
-    // Si pas dispo, on met 99 pour ne jamais bloquer
-    const nbEpisodesParSaison = (contenu as DataSerieModel)?.nbEpisodes
-      ? Math.round((contenu as DataSerieModel).nbEpisodes / nbSaisonsTotal)
-      : 99;
+    // Nb d'épisodes de la saison actuelle — stocké dans le modèle
+    // On utilise nbEpisodes comme "épisodes de la saison courante"
+    const nbEpisodesSaisonActuelle = (contenu as DataSerieModel)?.nbEpisodes || 99;
 
-    console.log('Saison:', this.seasonToSee, '/', nbSaisonsTotal);
-    console.log('Episode:', this.episodeToSee, '/', nbEpisodesParSaison);
-
-    if (this.episodeToSee < nbEpisodesParSaison) {
+    if (this.episodeToSee < nbEpisodesSaisonActuelle) {
+      // Cas normal : on avance dans la même saison
       this.episodeToSee++;
-    } else if (this.seasonToSee < nbSaisonsTotal) {
-      this.seasonToSee++;
-      this.episodeToSee = 1;
-    } else {
-      console.log('Série terminée !');
-      return;
-    }
+      if (contenu && contenu.type === 'series') {
+        await this.sauvegarderEpisode();
+      }
 
-    if (contenu && contenu.type === 'series') {
-      await this.sauvegarderEpisode();
+    } else if (this.seasonToSee < nbSaisonsTotal) {
+      // On est au dernier épisode → on passe à la saison suivante
+      const prochaineSaison = this.seasonToSee + 1;
+
+      // Appel API pour connaître le nb d'épisodes de la saison suivante
+      this.OMDB.getSaison(this.mediaDetails.imdbID, prochaineSaison).subscribe(async (res: any) => {
+        // L'API renvoie un tableau "Episodes" avec tous les épisodes de la saison
+        const nbEpisodesSuivante = res.Episodes ? res.Episodes.length : 99;
+
+        // On met à jour la saison et on repart à l'épisode 1
+        this.seasonToSee = prochaineSaison;
+        this.episodeToSee = 1;
+
+        // On met à jour le modèle avec le nouveau nb d'épisodes de cette saison
+        if (contenu && contenu.type === 'series') {
+          (contenu as DataSerieModel).nbEpisodes = nbEpisodesSuivante;
+          (contenu as DataSerieModel).seasonToSee = this.seasonToSee;
+          (contenu as DataSerieModel).episodeToSee = this.episodeToSee;
+          await this.dataService.mettreAJour(tousLesContenus);
+        }
+      });
+
+    } else {
+      // Dernière saison, dernier épisode → série terminée
+      this.serieTerminee = true;
     }
   }
 

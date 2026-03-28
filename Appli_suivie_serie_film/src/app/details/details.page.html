@@ -35,12 +35,17 @@
             <ion-icon name="remove-outline"></ion-icon>
           </ion-button>
 
-          <span>Épisode {{ episodeToSee }}</span>
+          <span>S{{ seasonToSee }} E{{ episodeToSee }}</span>
 
-          <ion-button (click)="episodeSuivant()">
+          <ion-button (click)="episodeSuivant()" [disabled]="serieTerminee">
             <ion-icon name="add-outline"></ion-icon>
           </ion-button>
         </div>
+
+        <!-- Message affiché quand la série est terminée -->
+        @if (serieTerminee) {
+          <p style="color: green; text-align: center;">✅ Série terminée !</p>
+        }
       </div>
     }
 
