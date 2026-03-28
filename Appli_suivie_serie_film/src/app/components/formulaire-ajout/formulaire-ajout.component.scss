@@ -1,0 +1,44 @@
+// Le header un peu plus marqué
+.header {
+  border-bottom: 2px solid #3880ff; // Petite barre bleue pour le style
+
+  .titre-form {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: #ffffff;
+  }
+}
+
+// Le bouton de validation qui claque
+.btn-valider-tout {
+  --color: #2dd36f;
+  font-weight: bold;
+  --background: rgba(45, 211, 111, 0.1);
+  border-radius: 8px;
+}
+
+// Le container principal pour pas que ça colle aux bords
+.bloc-saisie {
+  margin: 15px;
+  padding: 10px;
+  background: #1a1a1a;
+  border-radius: 20px;
+  border: 1px solid #333;
+}
+
+// Style des lignes de saisie
+.input-item {
+  --background: transparent;
+  --color: white;
+  margin-bottom: 10px;
+
+  &::part(native) {
+    border-radius: 12px;
+    background: #262626;
+  }
+}
+
+.fond-gris {
+  --background: #121212;
+}
