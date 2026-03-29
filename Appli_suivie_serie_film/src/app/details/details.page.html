@@ -4,7 +4,7 @@
   @if (mediaDetails) {
     <ion-img [src]="mediaDetails.imageUrl || mediaDetails.imageUrl"></ion-img>
 
-    <div class="ion-padding">
+    <div>
       <h2>{{ mediaDetails.name || mediaDetails.name }}</h2>
       <p>⭐ {{ mediaDetails.rating || mediaDetails.rating }}</p>
       <p><strong>Acteurs :</strong> {{ mediaDetails.actors || mediaDetails.actors }}</p>
@@ -33,7 +33,7 @@
       }
     }
     @else {
-      <div class="ion-padding">
+      <div>
         <p><strong>Saison :</strong> {{ seasonToSee }}</p>
         <p><strong>Épisode :</strong> {{ episodeToSee }}</p>
 
