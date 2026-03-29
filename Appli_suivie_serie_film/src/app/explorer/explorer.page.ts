@@ -76,7 +76,8 @@ export class ExplorerPage {
           duration: parseInt(details.Runtime) || 0,
           plot: details.Plot,
           actors: details.Actors,
-          rating: details.imdbRating
+          rating: details.imdbRating,
+          estAjoute: true
         });
       } else {
         nouveauContenu = new DataSerieModel({
@@ -85,9 +86,11 @@ export class ExplorerPage {
           imageUrl: details.Poster,
           type: 'series',
           plot: details.Plot,
+          runtime: details.Runtime,
           actors: details.Actors,
           rating: details.imdbRating,
-          nbSeasons: parseInt(details.totalSeasons) || 0
+          nbSeasons: parseInt(details.totalSeasons) || 0,
+          estAjoute: true
         });
       }
 

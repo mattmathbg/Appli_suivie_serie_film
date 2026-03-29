@@ -2,58 +2,64 @@
 
 <ion-content [fullscreen]="true">
   @if (mediaDetails) {
-    <ion-img [src]="mediaDetails.Poster || mediaDetails.imageUrl"></ion-img>
+    <ion-img [src]="mediaDetails.imageUrl || mediaDetails.imageUrl"></ion-img>
 
     <div class="ion-padding">
-      <h2>{{ mediaDetails.Title || mediaDetails.name }}</h2>
-      <p>⭐ {{ mediaDetails.imdbRating || mediaDetails.rating }}</p>
-      <p><strong>Acteurs :</strong> {{ mediaDetails.Actors || mediaDetails.actors }}</p>
-      <p><strong>Synopsis :</strong> {{ mediaDetails.Plot || mediaDetails.plot }}</p>
+      <h2>{{ mediaDetails.name || mediaDetails.name }}</h2>
+      <p>⭐ {{ mediaDetails.rating || mediaDetails.rating }}</p>
+      <p><strong>Acteurs :</strong> {{ mediaDetails.actors || mediaDetails.actors }}</p>
+      <p><strong>Synopsis :</strong> {{ mediaDetails.plot || mediaDetails.plot }}</p>
     </div>
 
-    @if(mediaDetails)
+    @if(mediaDetails){
     <!-- Progression FILM -->
-    @if (mediaDetails.Type === 'movie' || mediaDetails.type === 'movie') {
-      <div class="ion-padding">
-        <p><strong>Progression :</strong> {{ currentTime }} / {{ dureeFilm }} min</p>
-        <ion-range
-          aria-label="progression film"
-          [pin]="true"
-          [min]="0"
-          [max]="dureeFilm"
-          [(ngModel)]="currentTime"
-          (ionChange)="sauvegarderProgression()">
-        </ion-range>
-      </div>
+    @if (mediaDetails.type === 'movie') {
+      @if (mediaDetails.estAjoute) {
+        <div class="ion-padding">
+          <p><strong>Progression :</strong> {{ currentTime }} / {{ dureeFilm }} min</p>
+          <ion-range
+            aria-label="progression film"
+            [pin]="true"
+            [min]="0"
+            [max]="dureeFilm"
+            [(ngModel)]="currentTime"
+            (ionChange)="sauvegarderProgression()">
+          </ion-range>
+        </div>
+        <ion-button expand="block" (click)="meRappeler()">
+          <ion-icon name="alarm-outline" slot="start"></ion-icon>
+
+        </ion-button>
+      }
     }
     @else {
       <div class="ion-padding">
         <p><strong>Saison :</strong> {{ seasonToSee }}</p>
         <p><strong>Épisode :</strong> {{ episodeToSee }}</p>
 
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <ion-button (click)="episodePrecedent()">
-            <ion-icon name="remove-outline"></ion-icon>
+        @if (mediaDetails.estAjoute && !serieTerminee) {
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <ion-button (click)="episodePrecedent()">
+              <ion-icon name="remove-outline"></ion-icon>
+            </ion-button>
+
+            <span>S{{ seasonToSee }} E{{ episodeToSee }}</span>
+
+            <ion-button (click)="episodeSuivant()" [disabled]="serieTerminee">
+              <ion-icon name="add-outline"></ion-icon>
+            </ion-button>
+          </div>
+          <ion-button expand="block" (click)="meRappeler()">
+            <ion-icon name="alarm-outline" slot="start"></ion-icon>
+
           </ion-button>
-
-          <span>S{{ seasonToSee }} E{{ episodeToSee }}</span>
-
-          <ion-button (click)="episodeSuivant()" [disabled]="serieTerminee">
-            <ion-icon name="add-outline"></ion-icon>
-          </ion-button>
-        </div>
-
+        }
         <!-- Message affiché quand la série est terminée -->
         @if (serieTerminee) {
           <p style="color: green; text-align: center;">✅ Série terminée !</p>
         }
       </div>
     }
-
-    <ion-button expand="block" (click)="meRappeler()">
-      <ion-icon name="alarm-outline" slot="start"></ion-icon>
-      Me rappeler à la fin ({{ mediaDetails.Runtime }})
-    </ion-button>
 
     @if(estSauvegarde) {
       <ion-button color="danger" (click)="supprimer()">
@@ -65,5 +71,5 @@
       </ion-button>
     }
   }
+  }
 </ion-content>
-++

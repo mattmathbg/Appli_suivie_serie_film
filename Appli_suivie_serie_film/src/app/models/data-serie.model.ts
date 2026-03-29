@@ -12,7 +12,7 @@ export class DataSerieModel {
   episodeToSee: number = 1;
   episodeToSeeTitle: string = '';
   note: number = 0;
-  duree: number = 0;
+  runtime: string = '';
   lastDate: Date = new Date();
   actors: string = '';
   rating: number = 0;

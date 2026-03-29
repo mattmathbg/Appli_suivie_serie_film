@@ -18,7 +18,7 @@ export class Notification {
     return true;
   }
 
-  async scheduleNotification(titre: string, corp: string, idContenu: number, poster: string = "", delayInSeconds: number = 0) {
+  async scheduleNotification(titre: string, corp: string, idContenu: string, poster: string = "", delayInSeconds: number = 0) {
     const hasPermission = await this.requestPermissions();
 
     //si on a pas la permission d envoyer des notification on arrete.
