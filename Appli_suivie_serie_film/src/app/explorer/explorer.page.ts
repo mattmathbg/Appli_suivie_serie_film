@@ -57,33 +57,43 @@ export class ExplorerPage {
 }
 
   voirDetails(id: string) {
+    //relativeTo permet de dire depuis ou je construis le chemin
     this.router.navigate(['details', id], { relativeTo: this.route });
   }
 
   async ajouterContent(filmOMDb: any) {
-    let nouveauContenu;
+    // On récupère les détails complets depuis OMDb avant de sauvegarder
+    this.OMDB.getDetails(filmOMDb.imdbID).subscribe(async (details: any) => {
+      let nouveauContenu;
 
+      if (filmOMDb.Type === 'movie') {
+        nouveauContenu = new DataFilmModel({
+          id: details.imdbID,
+          name: details.Title,
+          imageUrl: details.Poster,
+          type: 'movie',
+          runtime: details.Runtime,
+          duration: parseInt(details.Runtime) || 0,
+          plot: details.Plot,
+          actors: details.Actors,
+          rating: details.imdbRating
+        });
+      } else {
+        nouveauContenu = new DataSerieModel({
+          id: details.imdbID,
+          name: details.Title,
+          imageUrl: details.Poster,
+          type: 'series',
+          plot: details.Plot,
+          actors: details.Actors,
+          rating: details.imdbRating,
+          nbSeasons: parseInt(details.totalSeasons) || 0
+        });
+      }
 
-    if (filmOMDb.Type === 'movie') {
-      nouveauContenu = new DataFilmModel({
-        id: filmOMDb.imdbID,
-        name: filmOMDb.Title,
-        imageUrl: filmOMDb.Poster,
-        type: 'movie',
-        estAjoute: true
-      });
-    } else {
-      nouveauContenu = new DataSerieModel({
-        id: filmOMDb.imdbID,
-        name: filmOMDb.Title,
-        imageUrl: filmOMDb.Poster,
-        type: 'series',
-        estAjoute: true
-      });
-    }
-
-    await this.dataService.addContenue(nouveauContenu);
-    filmOMDb.estAjoute = true;
+      await this.dataService.addContenue(nouveauContenu);
+      filmOMDb.estAjoute = true;
+    });
   }
 
 }

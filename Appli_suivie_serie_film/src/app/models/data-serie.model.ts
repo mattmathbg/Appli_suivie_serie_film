@@ -14,6 +14,10 @@ export class DataSerieModel {
   note: number = 0;
   duree: number = 0;
   lastDate: Date = new Date();
+  actors: string = '';
+  rating: number = 0;
+  plot: string = '';
+
 
   constructor(fields?: Partial<DataSerieModel>) {
     if (fields) {
