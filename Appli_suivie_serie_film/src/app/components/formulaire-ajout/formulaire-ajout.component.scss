@@ -1,6 +1,6 @@
 // Le header un peu plus marqué
 .header {
-  border-bottom: 2px solid #3880ff; // Petite barre bleue pour le style
+  border-bottom: 2px solid #3880ff;
 
   .titre-form {
     font-weight: 800;
@@ -10,7 +10,7 @@
   }
 }
 
-// Le bouton de validation qui claque
+// Le bouton de validation
 .btn-valider-tout {
   --color: #2dd36f;
   font-weight: bold;

@@ -6,6 +6,8 @@ import {LocalNotifications} from "@capacitor/local-notifications";
 import {DataService} from "../Services/data.service";
 import {DataSerieModel} from "../models/data-serie.model";
 import {DataFilmModel} from "../models/data-film.models";
+import {Router} from "@angular/router";
+import {NavController} from "@ionic/angular";
 
 @Component({
   selector: 'app-details',
@@ -22,6 +24,8 @@ export class DetailsPage {
   private NotificationService = inject(Notification);
   protected dataService = inject(DataService);
   private cd = inject(ChangeDetectorRef);
+  private router = inject(Router);
+  private navCtrl = inject(NavController);
 
 
   name: string = '';
@@ -100,6 +104,7 @@ export class DetailsPage {
   }
 
   async ajouter() {
+
     this.OMDB.getDetails(this.id).subscribe(async ( details: any) => {
       let nouveauContenu;
       if (!this.mediaDetails) { return; }
@@ -134,6 +139,12 @@ export class DetailsPage {
 
       await this.dataService.addContenue(nouveauContenu);
       nouveauContenu.estAjoute = true;
+
+      if (details.Type === 'movie') {
+        this.router.navigate(['/tabs/Films']);
+      } else {
+        this.router.navigate(['/tabs/Series']);
+      }
     });
   }
 
@@ -141,6 +152,7 @@ export class DetailsPage {
     if (!this.mediaDetails) { return; }
     await this.dataService.Supprimer(this.mediaDetails.id);
     this.estSauvegarde = false;
+    this.navCtrl.back();
   }
 
 
