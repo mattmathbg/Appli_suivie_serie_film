@@ -14,9 +14,6 @@ import {ModalController} from "@ionic/angular";
   standalone: false,
 })
 export class ExplorerPage {
-  /*SearchQuery sera mis en a jour en two way binding , cela synchronise  la variable avec ce que l'utilisateur
-  * tape donc pas besoin de le faire dans lancerRecherche
-  * */
   public searchQuery: string = '';
   protected contenus: any[] = [];
   public OMDB = inject(OMDbService);
@@ -47,9 +44,9 @@ export class ExplorerPage {
   async OuvertureAjout() {
     const modal = await this.modalCtrl.create({
       component: FormulaireAjoutComponent,
-      initialBreakpoint: 0.8, // Monte un peu plus haut (80%)
+      initialBreakpoint: 0.8,
       breakpoints: [0, 0.5, 0.8, 1],
-      handle: true // Ajoute la petite barre grise en haut pour que l'utilisateur puisse tirer la modale
+      handle: true
     });
 
     await modal.present();
@@ -57,12 +54,10 @@ export class ExplorerPage {
 }
 
   voirDetails(id: string) {
-    //relativeTo permet de dire depuis ou je construis le chemin
     this.router.navigate(['details', id], { relativeTo: this.route });
   }
 
   async ajouterContent(filmOMDb: any) {
-    // On récupère les détails complets depuis OMDb avant de sauvegarder
     this.OMDB.getDetails(filmOMDb.imdbID).subscribe(async (details: any) => {
 
       let nouveauContenu;

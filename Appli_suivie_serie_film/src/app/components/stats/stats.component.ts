@@ -8,13 +8,10 @@ import { DataService } from "../../Services/data.service";
   standalone: false,
 })
 export class StatsComponent {
-  // On injecte le service qui contient les données
   private dataService = inject(DataService);
 
   constructor() { }
 
-
-  // Fonctions pour récupérer les chiffres depuis le service
   getTotal(): number {
     return this.dataService.getLenTotal();
   }

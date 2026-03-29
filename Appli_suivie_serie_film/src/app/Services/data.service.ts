@@ -11,7 +11,6 @@ export class DataService {
   private readonly STORAGE_KEY = 'my_series';
   private storage = inject(Storage);
 
-  // Notre source de vérité locale
   public dataSeries: (DataSerieModel | DataFilmModel)[] = [];
 
   constructor() {
@@ -24,7 +23,6 @@ export class DataService {
     await this.loadAll();
   }
 
-  // Remplace toute la liste par la version mise à jour
   async mettreAJour(liste: (DataSerieModel | DataFilmModel)[]): Promise<void> {
     await this._storage?.set(this.STORAGE_KEY, liste);
   }
@@ -38,24 +36,20 @@ export class DataService {
     }
   }
 
-  // --- LES GETTERS (Ceux que tu voulais) ---
-
-  // Récupérer TOUT le contenu
   public getContenues(): (DataSerieModel | DataFilmModel)[] {
     return this.dataSeries;
   }
 
-  // Récupérer uniquement les FILMS
+
   public getFilm(): DataFilmModel[] {
     return this.dataSeries.filter(item => item.type === 'movie') as DataFilmModel[];
   }
 
-  // Récupérer uniquement les SÉRIES
+
   public getSerie(): DataSerieModel[] {
     return this.dataSeries.filter(item => item.type === 'series') as DataSerieModel[];
   }
 
-  // --- STATISTIQUES ---
 
   public getLenTotal(): number {
     return this.dataSeries.length;
@@ -69,7 +63,6 @@ export class DataService {
     return this.getFilm().length;
   }
 
-  // --- ACTIONS ---
 
   async addContenue(NContenue: DataSerieModel | DataFilmModel) {
     this.dataSeries.push(NContenue);
@@ -93,7 +86,7 @@ export class DataService {
     return this.dataSeries.some(item => item.id === id);
   }
 
-  //fonction pour vider le storage si besoin
+
   async clearStorage() {
     await this._storage?.clear();
   }

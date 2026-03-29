@@ -38,8 +38,4 @@ export class SeriesPage {
     return await this.data.getSerie();
   }
 
-
-  /* Pour clear le storage
-  <ion-button (click)="data.clearStorage()">Vider storage</ion-button>
-   */
 }

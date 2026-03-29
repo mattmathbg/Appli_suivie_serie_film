@@ -271,8 +271,6 @@ export class DetailsPage {
 
   async meRappeler() {
     if (!this.mediaDetails){return;}
-    // On réutilise le service Notification au lieu d'appeler LocalNotifications directement
-    // C'est plus propre et cohérent avec le reste de l'app
     const dureeMinutes = parseInt(this.mediaDetails.runtime) || 0;
 
     await this.NotificationService.scheduleNotification(
@@ -280,7 +278,7 @@ export class DetailsPage {
       `Mets à jour ton avancement pour ${this.mediaDetails.name} !`,
       this.mediaDetails.id,
      this.mediaDetails.imageUrl,
-      dureeMinutes * 60  // le service attend des secondes
+      dureeMinutes * 60
     );
   }
 }

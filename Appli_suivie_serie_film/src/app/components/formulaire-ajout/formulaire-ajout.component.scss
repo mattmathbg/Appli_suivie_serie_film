@@ -1,4 +1,3 @@
-// Le header un peu plus marqué
 .header {
   border-bottom: 2px solid #3880ff;
 
@@ -10,7 +9,6 @@
   }
 }
 
-// Le bouton de validation
 .btn-valider-tout {
   --color: #2dd36f;
   font-weight: bold;
@@ -18,7 +16,6 @@
   border-radius: 8px;
 }
 
-// Le container principal pour pas que ça colle aux bords
 .bloc-saisie {
   margin: 15px;
   padding: 10px;
@@ -26,8 +23,6 @@
   border-radius: 20px;
   border: 1px solid #333;
 }
-
-// Style des lignes de saisie
 .input-item {
   --background: transparent;
   --color: white;

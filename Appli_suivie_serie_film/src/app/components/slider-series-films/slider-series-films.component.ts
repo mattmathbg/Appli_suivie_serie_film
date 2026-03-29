@@ -15,7 +15,6 @@ export class SliderSeriesFilmsComponent {
   private route = inject(ActivatedRoute);
 
   voirDetails(id: string) {
-    //relativeTo permet de dire depuis ou je construis le chemin
     this.router.navigate(['details', id], { relativeTo: this.route });
   }
 

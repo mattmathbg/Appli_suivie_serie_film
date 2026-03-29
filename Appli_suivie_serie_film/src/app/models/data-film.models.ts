@@ -9,12 +9,10 @@ export class DataFilmModel {
   rating: number = 0;
   plot: string = '';
 
-
-  // --- Propriétés de progression spécifiques au FILM ---
-  runtime: string = '';      // Durée totale (ex: "120 min")
-  currentTime: number = 0;   // Temps visionné en minutes
-  duration: number = 0;      // Durée totale en minutes (pour les calculs)
-  percentViewed: number = 0; // Pourcentage de progression (0 à 100)
+  runtime: string = '';
+  currentTime: number = 0;
+  duration: number = 0;
+  percentViewed: number = 0;
 
   note: number = 0;
   lastDate: Date = new Date();
@@ -29,7 +27,6 @@ export class DataFilmModel {
     }
   }
 
-  // Petite méthode pour calculer automatiquement la barre de progression
   updatePercentage() {
     if (this.duration > 0) {
       this.percentViewed = Math.round((this.currentTime / this.duration) * 100);

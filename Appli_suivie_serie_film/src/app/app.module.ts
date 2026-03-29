@@ -12,7 +12,6 @@ import {IonicStorageModule} from "@ionic/storage-angular";
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,IonicStorageModule.forRoot()],
-  /*ProvideHttpClient permet d'avoir httpClient partout dans l'app */
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },provideHttpClient()],
   bootstrap: [AppComponent],
 })

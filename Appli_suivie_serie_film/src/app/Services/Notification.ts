@@ -21,13 +21,10 @@ export class Notification {
   async scheduleNotification(titre: string, corp: string, idContenu: string, poster: string = "", delayInSeconds: number = 0) {
     const hasPermission = await this.requestPermissions();
 
-    //si on a pas la permission d envoyer des notification on arrete.
     if (!hasPermission) return;
 
-    //ID prend l'heure
     const notifId = Math.floor(Date.now() / 1000);
 
-    // Calcule la date de déclenchement
     const scheduleDate = new Date(Date.now() + delayInSeconds * 1000);
 
     await LocalNotifications.schedule({
@@ -47,9 +44,6 @@ export class Notification {
     console.log(`Notification programmée pour : ${scheduleDate}`);
   }
 
-  /**
-   * Annule toutes les notifications en attente
-   */
   async cancelAllNotifications() {
     const pending = await LocalNotifications.getPending();
     if (pending.notifications.length > 0) {
