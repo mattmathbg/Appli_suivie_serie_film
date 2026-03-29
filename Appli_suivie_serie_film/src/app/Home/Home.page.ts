@@ -12,9 +12,16 @@ import {DataFilmModel} from "../models/data-film.models";
 export class HomePage {
 
   private data = inject(DataService);
+  public mesSeries: DataSerieModel[] = [];
+  public mesFilms: DataFilmModel[] = [];
   constructor() {}
 
   getSerie(): (DataSerieModel | DataFilmModel)[] {
     return this.data.getDataSeries();
+  }
+
+  ionViewWillEnter() {
+    this.mesSeries = this.data.getSerie();
+    this.mesFilms = this.data.getFilm();
   }
 }
