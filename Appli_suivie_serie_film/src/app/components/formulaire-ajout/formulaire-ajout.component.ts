@@ -49,7 +49,7 @@ export class FormulaireAjoutComponent  {
       nouveauContenu = new DataFilmModel({
         id: idUnique,
         name: this.nomSaisi,
-        imageUrl: 'assets/images/default-cover.webp', // Image par défaut
+        imageUrl: 'assets/img/imgParDefaut.png',
         type: this.type,
         estAjoute: true,
         lastDate: new Date(),

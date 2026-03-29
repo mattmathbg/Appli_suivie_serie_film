@@ -63,7 +63,6 @@ export class ExplorerPage {
 
   async ajouterContent(filmOMDb: any) {
     // On récupère les détails complets depuis OMDb avant de sauvegarder
-    console.log("ajouter content c buien lance");
     this.OMDB.getDetails(filmOMDb.imdbID).subscribe(async (details: any) => {
 
       let nouveauContenu;
