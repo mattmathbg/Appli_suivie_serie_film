@@ -63,6 +63,7 @@ export class ExplorerPage {
   async ajouterContent(filmOMDb: any) {
     let nouveauContenu;
 
+
     if (filmOMDb.Type === 'movie') {
       nouveauContenu = new DataFilmModel({
         id: filmOMDb.imdbID,

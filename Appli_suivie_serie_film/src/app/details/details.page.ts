@@ -6,6 +6,7 @@ import {LocalNotifications} from "@capacitor/local-notifications";
 import {DataService} from "../Services/data.service";
 import {DataSerieModel} from "../models/data-serie.model";
 import {DataFilmModel} from "../models/data-film.models";
+import {sadOutline} from "ionicons/icons";
 
 @Component({
   selector: 'app-details',
@@ -38,14 +39,15 @@ export class DetailsPage {
     if (!id) return;
 
     this.OMDB.getDetails(id).subscribe(async (res: any) => {
-      this.mediaDetails = res;
 
-      this.estSauvegarde = await this.dataService.checkIfSaved(this.mediaDetails.imdbID);
-      this.dureeFilm = parseInt(this.mediaDetails.Runtime) || 0;
+
+      this.mediaDetails = res;
+      console.log("marche bien pas",this.mediaDetails.imdbI);
 
       if (this.estSauvegarde) {
         const tousLesContenus = await this.dataService.getContenues();
         const contenu = tousLesContenus.find(c => c.id === this.mediaDetails.imdbID);
+
 
         if (contenu && contenu.type === 'movie') {
           this.currentTime = (contenu as DataFilmModel).currentTime;
