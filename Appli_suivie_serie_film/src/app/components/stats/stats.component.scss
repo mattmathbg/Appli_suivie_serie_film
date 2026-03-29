@@ -13,7 +13,6 @@ ion-card {
   flex: 0 0 auto; /* Empêche la carte de se rétrécir */
   width: 50%; /* Largeur de l'affiche */
 
-  /* Point d'aimantation du slider (au début de la carte) */
   scroll-snap-align: start;
 
   border-radius: 8px;
