@@ -64,6 +64,7 @@ export class ExplorerPage {
   async ajouterContent(filmOMDb: any) {
     // On récupère les détails complets depuis OMDb avant de sauvegarder
     this.OMDB.getDetails(filmOMDb.imdbID).subscribe(async (details: any) => {
+
       let nouveauContenu;
 
       if (filmOMDb.Type === 'movie') {
@@ -96,6 +97,7 @@ export class ExplorerPage {
 
       await this.dataService.addContenue(nouveauContenu);
       filmOMDb.estAjoute = true;
+
     });
   }
 
